@@ -37,45 +37,6 @@
     ItalicFont = * ,
     BoldItalicFont = * Bold
 ]{Noto Sans Mono CJK SC}
-
-\RequirePackage{tikz}
-\RequirePackage{tikz-feynman}
-\usetikzlibrary{tikzmark}
-\usetikzlibrary{arrows.meta,bending}
-\usetikzlibrary{calc}
-\usetikzlibrary{patterns}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{external}
-
-\tikzexternalize[
-    prefix = tikz-cache/,
-    system call = {
-        lualatex \tikzexternalcheckshellescape -interaction=nonstopmode -jobname="\image" "\texsource"
-    }
-]
-\tikzfeynmanset{warn luatex = false}
-
-\tikzset{
-    mid arrow options/.is family,
-    mid arrow options/.cd,
-    pos/.store in=\midarrowpos,
-    type/.store in=\midarrowtype,
-    pos=0.5,
-    type=stealth,
-}
-
-\tikzset{
-    mid arrow/.style={
-        mid arrow options/.cd, #1,
-        /tikz/.cd, 
-        decoration={
-            markings, 
-            mark=at position \midarrowpos with {\arrow{\midarrowtype}}
-        },
-        postaction={decorate}
-    }
-}
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt 
 \AtBeginDocument{
     \newcommand*{\eu}{\mathrm{e}}
     \newcommand*{\ramuno}{\mathrm{i}}

@@ -27,6 +27,19 @@
 %         S = - mc\int \dif \lambda\, \sqrt{\frac{\dif x_\mu}{\dif \lambda} \frac{\dif x^\mu}{\dif \lambda}}
 %     \end{equation}
 % \end{multicols}\end{document}
+\usepackage{slashed}
+
+\usepackage{tikz-feynman}
+\newcommand{\iam}{\mathcal{M}}
+\usetikzlibrary{external}
+
+\tikzexternalize[
+    prefix = tikz-cache/,
+    system call = {
+        lualatex \tikzexternalcheckshellescape -interaction=nonstopmode -jobname="\image" "\texsource"
+    }
+]
+\tikzfeynmanset{warn luatex = false}
 
 \begin{document}
     \input{chap/1.tex}

@@ -1,1 +1,2 @@
+xelatex -shell-escape -interaction=nonstopmode main
 xelatex -shell-escape -interaction=nonstopmode -synctex=1 main
