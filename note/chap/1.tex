@@ -1,24 +1,21 @@
-\begin{tikzpicture}
-  \begin{feynman}
-    % 1. 定义中心节点 (那个圆圈)
-    % 我们使用普通的 TikZ \node 命令来画这个圆，因为它比 feynman 的 dot 更容易控制大小和填充
-    \node [draw, circle, fill=white, minimum size=1cm, thick] (center) at (0,0) {};
-
-    % 2. 定义外部顶点的位置
-    % 左边的点
-    \vertex (left) at (-2, 0) {$\phi$};
-    % 右上角的点
-    \vertex (top_right) at (1.7, 1.2) {$\phi$};
-    % 右下角的点
-    \vertex (bot_right) at (1.7, -1.2) {$\phi$};
-
-    % 3. 画线
-    \diagram* {
-      % 连接左边到中心，使用 thick 加粗线条以匹配图片
-      (left) -- [thick] (center),
-      % 连接中心到右边
-      (center) -- [thick] (top_right),
-      (center) -- [thick] (bot_right),
-    };
-  \end{feynman}
-\end{tikzpicture}
+\begin{equation}
+  \begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{feynman}
+            \vertex (c);
+            \vertex [left=0.64cm of c] (a);
+            \vertex [right=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {\(p_1\)};
+            \vertex [above right=1.36cm of c] (p3) {\(p_3\)};
+            \vertex [below left=1.36cm of c] (p2) {\(p_2\)};
+            \vertex [below right=1.36cm of c] (p4) {\(p_4\)};
+            \diagram* {
+                (p1) --  (a),
+                (p2) -- (a),
+                (a) -- [double,out=71.5, in=108.5, looseness=1.5] (b),
+                (a) -- [double,out=-71.5, in=-108.5, looseness=1.5] (b),
+                (b) --  (p3),
+                (b) -- (p4),
+            };
+        \end{feynman}
+  \end{tikzpicture}
+\end{equation}
