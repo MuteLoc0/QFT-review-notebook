@@ -1,5 +1,5 @@
-QFT中用西海岸度规$(1,\bm{-1})$
-
+QFT中用西海岸度规$(1,\bm{-1})$\\
+张量指标记法 $x_\mu = g_{\mu\nu} x^\nu$，矩阵转置满足 $(\Lambda^T)_\nu^\mu = \Lambda^\mu_\nu$（前行后列）。
 $$\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
 \nsection{经典场论}
 \begin{equation*}
@@ -11,14 +11,14 @@ $$\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
     \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \implies (\partial_\mu \partial^\mu + m^2)\phi = 0 \quad (\text{KG方程})
 \end{equation*}
 在海森堡绘景下的演化方程为：
-\begin{equation*}
+$
     \frac{\dif A}{\dif t} = \ramuno [H, A]
-\end{equation*}
-$a_{p}|_H= \eu^{iHt} a_p  \eu^{-iHt}= a_p  \eu^{-iE_p t}$
+$
+\ 其中$a_{p}|_H= \eu^{iHt} a_p  \eu^{-iHt}= a_p  \eu^{-iE_p t}$
 
-\subnsection{量子化}
+\concept{量子化}{}
 化到动量表象中，$ \phi(x) = \int \frac{\dif^3 p}{(2\pi)^3}\eu^{\ramuno p \cdot x}\phi(p) $
-K-G 方程化为 $[\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\bm{p}}(t) = 0$
+\quad K-G 方程 $[\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\bm{p}}(t) = 0$
 
 \begin{align*}
     \phi(x) &= \int \frac{\dif^3 p}{(2\pi)^3 \sqrt{2E_p}} \left( a_{\bm{p}} \eu^{-\ramuno p \cdot x} + a_{\bm{p}}^\dagger \eu^{\ramuno p \cdot x} \right) \\
@@ -26,29 +26,23 @@ K-G 方程化为 $[\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\
 \end{align*}
 其中 $p \cdot x = E_p t - \bm{p}\cdot\bm{x}$。\,
 等时正则对易关系：
-\begin{align*}
-    [a_{\bm{p}}, a_{\bm{q}}^\dagger] &= (2\pi)^3 \delta^{(3)}(\bm{p}-\bm{q}) \\
-    [\phi(\bm{x}), \pi(\bm{y})] &= \ramuno \delta^{(3)}(\bm{x}-\bm{y})
-\end{align*}
+\begin{equation*}
+    [a_{\bm{p}}, a_{\bm{q}}^\dagger] = (2\pi)^3 \delta^{(3)}(\bm{p}-\bm{q}) 
+    \quad[\phi(\bm{x}), \pi(\bm{y})] = \ramuno \delta^{(3)}(\bm{x}-\bm{y})
+\end{equation*}
 \begin{align*}
     H &= \int \dif^3 x \left[ \frac{1}{2}\pi^2 + \frac{1}{2}(\nabla \phi)^2 + \frac{1}{2}m^2\phi^2 \right] 
        = \int \frac{\dif^3 p}{(2\pi)^3} E_p \left( a_{\bm{p}}^\dagger a_{\bm{p}} + \frac{1}{2}[a_{\bm{p}}, a_{\bm{p}}^\dagger] \right) \\
     \bm{P} &= \int \frac{\dif^3 p}{(2\pi)^3} \bm{p} \, a_{\bm{p}}^\dagger a_{\bm{p}}
 \end{align*}
 
-\begin{center}
-    \small{注：张量指标记法 $x_\mu = g_{\mu\nu} x^\nu$，矩阵转置满足 $(\Lambda^T)_\nu^\mu = \Lambda^\mu_\nu$（前行后列）。}
-\end{center}
-
-\subnsection{诺特定理}
+\concept{Noether 定理}{}
 考虑场变换 $\phi(x) \to \phi(x) + \alpha \Delta \phi(x)$，导致拉格朗日密度变化为全散度项：
 \begin{equation*}
     \mathcal{L}(x) \to \mathcal{L}(x) + \alpha \partial_\mu \mathcal{J}^\mu(x)
 \end{equation*}
-定义诺特流（Noether Current）$j^\mu$：
-\begin{equation*}
-    j^\mu(x) = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \Delta \phi - \mathcal{J}^\mu(x)
-\end{equation*}
+定义Noether Current$j^\mu(x) = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \Delta \phi - \mathcal{J}^\mu(x)
+$\\
 由运动方程可证该流是守恒的：
 \begin{equation*}
     \partial_\mu j^\mu(x) = 0 \iff \frac{\partial j^0}{\partial t} + \nabla \cdot \bm{j} = 0
@@ -57,10 +51,8 @@ K-G 方程化为 $[\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\
 \begin{equation*}
     Q = \int \dif^3 x \, j^0(x), \qquad \frac{\dif Q}{\dif t} = - \int \dif^3 x \, \nabla \cdot \bm{j} = 0
 \end{equation*}
-\subsubnsection{能量-动量张量 (Energy-Momentum Tensor)}
-\begin{equation*}
-    T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \partial^\nu \phi - \mathcal{L} g^{\mu\nu}
-\end{equation*}
+能量-动量张量 (Energy-Momentum Tensor)$T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \partial^\nu \phi - \mathcal{L} g^{\mu\nu}
+$
 u=0对应守恒菏，v=0对应时间，$v\neq0$对应空间
 \begin{align*}
     \int \dif^3 x \, T^{00} &= \int \dif^3 x \, (\pi \dot{\phi} - \mathcal{L}) = H \quad (\text{能量}) \\
@@ -78,24 +70,19 @@ K-G传播子
 \begin{equation*}
    D_{R} (x-y)= \theta(x^0 - y^0)\bra{0}\phi(x)\phi(y)\ket{0} =\int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2} \eu^{-\ramuno p \cdot (x-y)}
 \end{equation*}
-\textbf{推迟格林函数 (Retarded Green's Function)}：
 费曼传播子
 \begin{align*}
-   D_{ij}= D_F(x-y) &= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x-y)} \\
-    &= \bra{0} T \phi(x)\phi(y) \ket{0} \\
+   D_{ij}= D_F(x-y)= \bra{0} T \phi(x)\phi(y) \ket{0} = \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x-y)} 
+  
 \end{align*}
 
 $D_F$和$D_R$都是格林函数：
 \begin{equation*}
     (\partial^2 + m^2) D_F(x-y) = -\ramuno \delta^{(4)}(x-y)
 \end{equation*}
-\begin{center}
-    \fbox{\parbox{0.4\textwidth}{
-        \textbf{通理}：若算子 $L G = \delta$，则在任意源项 $f(x)$ 下， $L u(x) = f(x)$。解为 $u(x) = \int f(x') G(x, x') \dif x'$
-    }}
-\end{center}
-
-\textbf{例：有源项的场方程,加了源$j(x)$}
+\concept{通理}{若算子 $L G = \delta$，则在任意源项 $f(x)$ 下， $L u(x) = f(x)$。解为 $u(x) = \int f(x') G(x, x') \dif x'$
+}
+\concept{有源项的场方程}{加了源$j(x)$}
 其解可以写为自由场 $\phi_0$ 加上源项产生的特解：
 \begin{equation*}
     \phi(x) = \phi_0(x) + \ramuno \int \dif^4 y \, D_R(x-y) j(y)\, | a_{\bm{p}} \to a_{\bm{p}} + \frac{\ramuno j(p)}{\sqrt{2E_p}}
@@ -143,32 +130,4 @@ LSZ将S联系到关联函数
 \end{equation*}
 
 
-
-\nsection{费曼规则}
-\subnsection{坐标空间}
-\small{$g^2$代表有2个顶点}
-\begin{itemize}
-  \item  传播子：$D_F(x-y)$\,
-     顶点：$\int -\ramuno g \dif^4 x$\,
-    外部点：1
-  \item 最后除以对称因子S
-\end{itemize}
-    
-    
-\subnsection{动量空间}
-\begin{itemize}
-  \item 传播子：$\frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon}$\,
-顶点：$\ramuno \lambda$
-外部点：1
-  \item 有1个圈，乘$\int \frac{\dif^4 k}{(2\pi)^4 }$(旋量再乘$-1$，标量不用管)
-  \item 最后除以对称因子S
-\end{itemize}
-
-\subnsection{Scalar QED($\pi^\pm$ 介子)}
-\subnsection{拉格朗日量与相互作用}
-自由场拉格朗日量：
-\begin{equation*}
-    \mathcal{L} = -(\partial_\mu \phi)^* (\partial^\mu \phi) - m^2 \phi^* \phi - \frac{1}{4}F_{\mu\nu}^2
-\end{equation*}
-引入协变导数 $D_\mu = \partial_\mu + \ramuno e A_\mu$ 进行替换 $\partial_\mu \to D_\mu$：
 
