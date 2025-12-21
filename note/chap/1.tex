@@ -2,13 +2,11 @@ QFT中用西海岸度规$(1,\bm{-1})$
 
 $$\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
 \nsection{经典场论}
-\begin{align*}
+\begin{equation*}
     H = \int \dif^3 x \, (\pi \dot{\phi} - \mathcal{L}) \qquad
     \bm{P} = - \int \dif^3 x \, \pi(\bm{x}) \nabla \phi(\bm{x})
-\end{align*}
+\end{equation*}
 其中共轭动量定义为 $\pi = \frac{\partial \mathcal{L}}{\partial \dot{\phi}}= \dot{\phi}$\ (在$\mathcal{L} = \frac{1}{2} \partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m^2 \phi^2$中)。
-
-\subnsection{运动方程 (EOM)}
 \begin{equation*}
     \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \implies (\partial_\mu \partial^\mu + m^2)\phi = 0 \quad (\text{KG方程})
 \end{equation*}
@@ -59,7 +57,7 @@ K-G 方程化为 $[\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\
 \begin{equation*}
     Q = \int \dif^3 x \, j^0(x), \qquad \frac{\dif Q}{\dif t} = - \int \dif^3 x \, \nabla \cdot \bm{j} = 0
 \end{equation*}
-\subnsection{能量-动量张量 (Energy-Momentum Tensor)}
+\subsubnsection{能量-动量张量 (Energy-Momentum Tensor)}
 \begin{equation*}
     T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \partial^\nu \phi - \mathcal{L} g^{\mu\nu}
 \end{equation*}
