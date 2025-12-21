@@ -1,13 +1,13 @@
 QFT中用西海岸度规$(1,\bm{-1})$\\
 张量指标记法 $x_\mu = g_{\mu\nu} x^\nu$，矩阵转置满足 $(\Lambda^T)_\nu^\mu = \Lambda^\mu_\nu$（前行后列）。
-$$\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
+$$\scriptstyle\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
 \nsection{经典场论}
-\begin{equation*}
+\begin{equation*}\scriptstyle
     H = \int \dif^3 x \, (\pi \dot{\phi} - \mathcal{L}) \qquad
     \bm{P} = - \int \dif^3 x \, \pi(\bm{x}) \nabla \phi(\bm{x})
 \end{equation*}
 其中共轭动量定义为 $\pi = \frac{\partial \mathcal{L}}{\partial \dot{\phi}}= \dot{\phi}$\ (在$\mathcal{L} = \frac{1}{2} \partial_\mu \phi \partial^\mu \phi - \frac{1}{2} m^2 \phi^2$中)。
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \implies (\partial_\mu \partial^\mu + m^2)\phi = 0 \quad (\text{KG方程})
 \end{equation*}
 在海森堡绘景下的演化方程为：
@@ -26,7 +26,7 @@ $
 \end{align*}
 其中 $p \cdot x = E_p t - \bm{p}\cdot\bm{x}$。\,
 等时正则对易关系：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     [a_{\bm{p}}, a_{\bm{q}}^\dagger] = (2\pi)^3 \delta^{(3)}(\bm{p}-\bm{q}) 
     \quad[\phi(\bm{x}), \pi(\bm{y})] = \ramuno \delta^{(3)}(\bm{x}-\bm{y})
 \end{equation*}
@@ -36,22 +36,22 @@ $
     \bm{P} &= \int \frac{\dif^3 p}{(2\pi)^3} \bm{p} \, a_{\bm{p}}^\dagger a_{\bm{p}}
 \end{align*}
 洛伦兹不变体积元：
-\begin{equation*}
+\begin{equation*}\scriptstyle
   \int \frac{\dif^3 k}{2\pi^3}\frac{1}{2E_p}=\int \frac{\dif^4k}{2\pi^4}\delta(k^2-m^2)
 \end{equation*}
 \concept{Noether 定理}{}
 考虑场变换 $\phi(x) \to \phi(x) + \alpha \Delta \phi(x)$，导致拉格朗日密度变化为全散度项：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \mathcal{L}(x) \to \mathcal{L}(x) + \alpha \partial_\mu \mathcal{J}^\mu(x)
 \end{equation*}
 定义Noether Current$j^\mu(x) = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \Delta \phi - \mathcal{J}^\mu(x)
 $\\
 由运动方程可证该流是守恒的：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \partial_\mu j^\mu(x) = 0 \iff \frac{\partial j^0}{\partial t} + \nabla \cdot \bm{j} = 0
 \end{equation*}
 守恒荷 $Q$ 定义为：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     Q = \int \dif^3 x \, j^0(x), \qquad \frac{\dif Q}{\dif t} = - \int \dif^3 x \, \nabla \cdot \bm{j} = 0
 \end{equation*}
 能量-动量张量 (Energy-Momentum Tensor)$T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \partial^\nu \phi - \mathcal{L} g^{\mu\nu}
@@ -66,34 +66,34 @@ u=0对应守恒菏，v=0对应时间，$v\neq0$对应空间
 
 
 \nsection{传播子}
-\begin{equation*}
+\begin{equation*}\scriptstyle
     D(x-y) = \bra{0} \phi(x)\phi(y) \ket{0} = \int \frac{\dif^3 p}{(2\pi)^3 2E_p} \eu^{-\ramuno p \cdot (x-y)} \quad (\text{洛伦兹不变量})
 \end{equation*}
 K-G传播子
-\begin{equation*}
+\begin{equation*}\scriptstyle
    D_{R} (x-y)= \theta(x^0 - y^0)\bra{0}\phi(x)\phi(y)\ket{0} =\int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2} \eu^{-\ramuno p \cdot (x-y)}
 \end{equation*}
 费曼传播子
-\begin{align*}
-   D_{ij}& = D_F(x_i - x_j) 
+\begin{align*}\scriptstyle
+   D_{ij}& \scriptstyle= D_F(x_i - x_j) 
           = \bra{0} \mathrm{T} \phi(x_i)\phi(x_j) \ket{0} \\
-          &= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x_i - x_j)} 
+          &\scriptstyle= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x_i - x_j)} 
 \end{align*}
 
 $D_F$和$D_R$都是格林函数：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     (\partial^2 + m^2) D_F(x-y) = -\ramuno \delta^{(4)}(x-y)
 \end{equation*}
 \concept{通理}{若算子 $L G = \delta$，则在任意源项 $f(x)$ 下， $L u(x) = f(x)$。解为 $u(x) = \int f(x') G(x, x') \dif x'$
 }
 \concept{有源项的场方程}{加了源$j(x)$}
 其解可以写为自由场 $\phi_0$ 加上源项产生的特解：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \phi(x) = \phi_0(x) + \ramuno \int \dif^4 y \, D_R(x-y) j(y)\, | a_{\bm{p}} \to a_{\bm{p}} + \frac{\ramuno j(p)}{\sqrt{2E_p}}
 \end{equation*}
 \concept{Schwinger-Dyson (SD) 方程}{}
 记号 $\braket{\dots} = \bra{\varOmega} T(\dots) \ket{\varOmega}$。对于相互作用场：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     (\square_x + m^2) \braket{\phi_x \phi_1 \dots \phi_n} = \braket{\mathcal{L}'_{int} \phi_1 \dots \phi_n} - \ramuno \hbar \sum_j \delta^{(4)}(x-x_j) \braket{\phi_1 \dots \cancel{\phi}_j \dots \phi_n}
 \end{equation*}
 \concept{LSZ 约化公式}{}
@@ -102,87 +102,86 @@ $D_F$和$D_R$都是格林函数：
     \ket{f} &= \sqrt{2\omega_3} \dots \sqrt{2\omega_n} \, a_{\bm{p}_3}^\dagger(+\infty) \dots a_{\bm{p}_n}^\dagger(+\infty) \ket{\varOmega}
 \end{align*}
 LSZ将S联系到关联函数
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \braket{f | S | i} = \left[ -\ramuno \int \dif^4 x_1 \, \eu^{-\ramuno p_1 x_1} (\square_1 + m^2) \right] \dots \bra{\varOmega} T \phi(x_1) \phi(x_2) \dots \ket{\varOmega}
 \end{equation*}
 其中 $
     S = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
 
-    \begin{equation*}
+    \begin{equation*}\scriptstyle
     \bra{\varOmega} T \{ \phi \dots \} \ket{\varOmega} = \frac{\bra{0} T \{ \phi_I \dots \phi_I \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}{\bra{0} T \{ \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}
 \end{equation*}
 
 \nsection{散射问题汇总}
 \concept{散射截面Cross Section}{}
 
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \dif \sigma = \frac{1}{(2E_1)(2E_2)|\bm{v}_1 - \bm{v}_2|} |\mathcal{M}|^2 \dif \varPi_{\text{LIPS}}
 \end{equation*}
 其中 $\dif \varPi_{\text{LIPS}}$ 为**洛伦兹不变相空间** (Lorentz Invariant Phase Space) 因子：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \dif \varPi_{\text{LIPS}} = \left( \prod_f \frac{\dif^3 p_f}{(2\pi)^3 2E_{p_f}} \right) (2\pi)^4 \delta^{(4)}(\sum p_i - \sum p_f)
 \end{equation*}
 质心系下的微分散射截面:
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \left( \frac{\dif \sigma}{\dif \varOmega} \right)_{\text{CM}} = \frac{1}{64\pi^2 E_{\text{cm}}^2} \frac{|\bm{p}_f|}{|\bm{p}_i|} |\mathcal{M}|^2 \Theta(E_{\text{cm}} - m_3 - m_4)
 \end{equation*}
 其中总能量守恒 $E_{\text{cm}} = E_1 + E_2 = E_3 + E_4$。\\
 \concept{衰变 (Decay)$1 \to n$的散射}{}
 衰变率 $\dif \varGamma$ 定义为：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \dif \varGamma =\frac{\dif P}{T}= \frac{1}{2E_1} |\mathcal{M}|^2 \dif \varPi_{\text{LIPS}}
 \end{equation*}
 
 
 \nsection{路径积分}
 经典跃迁振幅：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \braket{f | i} = \mathcal{N} \int_{x_i}^{x_f} \mathcal{D}x(t) \, \eu^{\ramuno S[x]}
 \end{equation*}
 其中测度定义为 $\mathcal{D}x = \dif x_n \dots \dif x_1$，作用量 $S[x] = \int \dif t \, L[x, \dot{x}]$。
 场论中：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \braket{0, t_f | 0, t_i} = \mathcal{N} \int \mathcal{D}\phi(x,t) \, \eu^{\ramuno S}
 \end{equation*}
 
 有重要公式，路径积分插入场算符对应于编时乘积：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \mathcal{N} \int \mathcal{D}\phi(x) \, \eu^{\ramuno S} \phi(x_1) \dots \phi(x_n) = \bra{0} T \phi(x_1) \dots \phi(x_n) \ket{0}
 \end{equation*}
 类似地有归一化后的形式：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = \frac{\int \mathcal{D}\phi \, \eu^{\ramuno S} \phi(x_1) \dots \phi(x_n)}{\int \mathcal{D}\phi \, \eu^{\ramuno S}}
 \end{equation*}
 
 \concept{生成函数}{} 
-\begin{equation*}
+\begin{equation*}\scriptstyle
     Z[J] = \int \mathcal{D}\phi \, \eu^{\ramuno (S + \int \dif^4 x \, J(x)\phi(x))}
 \end{equation*}
 
 
 
 把$J(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$ \frac{\delta J(x)}{\delta J(y)} = \delta^{(4)}(x-y)$合并，有：
-   \begin{equation*}
+   \begin{equation*}\scriptstyle
     \frac{\delta}{\delta J(x_1)} \int \dif^4 x \, J(x)\phi(x) = \phi(x_1)
 \end{equation*}
-\begin{equation*}
+\begin{equation*}\scriptstyle
     -\ramuno \frac{\delta Z}{\delta J(x_1)} = \int \mathcal{D}\phi \exp\left\{ \ramuno S[\phi] + \ramuno \int \dif^4 x \, J(x)\phi(x) \right\} \phi(x_1)
 \end{equation*}
 相互作用项可以用生成函数来表示
-\begin{equation*}
+\begin{equation*}\scriptstyle
     -\ramuno \frac{1}{Z[0]} \frac{\delta Z}{\delta J(x_1)} \bigg|_{J=0} = \frac{\int \mathcal{D}\phi \exp\{\ramuno S[\phi]\} \phi(x_1)}{\int \mathcal{D}\phi \, \eu^{\ramuno \int \dif^4 x \mathcal{L}[\phi]}} = \braket{\varOmega | \hat{\phi}(x_1) | \varOmega}
 \end{equation*}
-\begin{equation*}
-   
+\begin{equation*}\scriptstyle
     \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = (-\ramuno)^n \frac{1}{Z[0]} \frac{\delta^n Z}{\delta J(x_1) \dots \delta J(x_n)} \bigg|_{J=0}
 \end{equation*}
 
 \concept{Ward Identity}{}
 考虑路径积分下的诺特定理， 做变换
-\begin{equation*}
+\begin{equation*}\scriptstyle
 I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D}\overline{\psi} \, \eu^{\ramuno \int \dif^4 x \left[ \overline{\psi}(\ramuno \not{\partial} - m)\psi + \dots \right]} \psi(x_1) \overline{\psi}(x_2)
 \end{equation*}
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \psi(x) \to \eu^{-\ramuno \alpha(x)}\psi(x), \quad \overline{\psi}(x) \to \eu^{\ramuno \alpha(x)}\overline{\psi}(x)
 \end{equation*}
 路径积分的值 $Z$ 不变，拉氏量改变，2个$\psi$改变:\\
@@ -191,7 +190,7 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
    $ \psi(x_1) \overline{\psi}(x_2) \to \eu^{-\ramuno \alpha(x_1)} \eu^{\ramuno \alpha(x_2)} \psi(x_1) \overline{\psi}(x_2)$
 
 由于 $\alpha(x)$ 的任意性，被积函数必须为零，从而得到 
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
 \end{equation*}
 这表明量子守恒流的散度仅在接触项处非零。
@@ -199,7 +198,7 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
 \nsection{重整化}
 \concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
 再考虑单圈级，只算$s$-channel 的单圈修正
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \ramuno \mathcal{M}_2  = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
 \end{equation*}
 
@@ -208,44 +207,44 @@ $
     \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
 $
 积分后得到总散射振幅：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \mathcal{M} = \mathcal{M}_1 + \mathcal{M}_2 = -\lambda - \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s}{\Lambda^2} \right)\qquad(\Lambda \text{ 是无限大的截断})
 \end{equation*}
 利用可观测量消除发散:
 定义物理耦合常数 $\lambda_R$ 为在某一能标 $s_0$ 处测得的散射振幅：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
 \end{equation*}
 则$
     \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
 $,
 代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \mathcal{M}(s) = 
     -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
 \end{equation*}
 用一个可观测量（$\lambda_R$）来预测另一个量.
 
 \concept{$\psi^3$理论}{}
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \ramuno \mathcal{M}_{\text{loop}}(p) 
     = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
 \end{equation*}
 费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
 $k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
 积分变为：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \ramuno \mathcal{M}_{\text{loop}}(p) = \frac{g^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \int_0^1 \dif x \frac{1}{[k^2 - \Delta + \ramuno\epsilon]^2}
 \end{equation*}
 接着使用Pauli–Villars formula$ \int \frac{\dif^4 k}{(2\pi)^4} \frac{1}{(k^2 - \Delta + \ramuno\varepsilon)^2} = - \frac{\ramuno}{16\pi^2} \ln \frac{\Delta}{\Lambda^2}.$，并假设m=0，得到：
-\begin{equation*}
+\begin{equation*}\scriptstyle
     \mathcal{M}_{\text{loop}}(p) = -\frac{g^2}{32\pi^2} \ln \frac{Q^2}{\Lambda^2}\qquad( Q^2 = -p^2 > 0)
 \end{equation*}
 加上没有圈图的情况，有：
-\begin{equation*}
+\begin{equation*}\scriptstyle
   \mathcal{M}(Q) = \mathcal{M}^0(Q) + \mathcal{M}^1(Q) = \frac{g^2}{Q^2} \left( 1 - \frac{1}{32\pi^2} \frac{g^2}{Q^2} \ln \frac{Q^2}{\Lambda^2} + \mathcal{O}(g^4) \right)
 \end{equation*}
 用观测量来表示$\tilde{g}_R^2 = \mathcal{M}(Q_0) = \tilde{g}^2 - \frac{1}{32\pi^2} \tilde{g}^4 \ln \frac{Q_0^2}{\Lambda^2} + \mathcal{O}(\tilde{g}^6)$,最终得到：
-\begin{equation*}
+\begin{equation*}\scriptstyle
   \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
 \end{equation*}
