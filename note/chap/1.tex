@@ -225,3 +225,27 @@ $,
     -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
 \end{equation*}
 用一个可观测量（$\lambda_R$）来预测另一个量.
+
+\concept{$\psi^3$理论}{}
+\begin{equation*}
+    \ramuno \mathcal{M}_{\text{loop}}(p) 
+    = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
+\end{equation*}
+费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
+$k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
+积分变为：
+\begin{equation*}
+    \ramuno \mathcal{M}_{\text{loop}}(p) = \frac{g^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \int_0^1 \dif x \frac{1}{[k^2 - \Delta + \ramuno\epsilon]^2}
+\end{equation*}
+接着使用Pauli–Villars formula$ \int \frac{\dif^4 k}{(2\pi)^4} \frac{1}{(k^2 - \Delta + \ramuno\varepsilon)^2} = - \frac{\ramuno}{16\pi^2} \ln \frac{\Delta}{\Lambda^2}.$，并假设m=0，得到：
+\begin{equation*}
+    \mathcal{M}_{\text{loop}}(p) = -\frac{g^2}{32\pi^2} \ln \frac{Q^2}{\Lambda^2}\qquad( Q^2 = -p^2 > 0)
+\end{equation*}
+加上没有圈图的情况，有：
+\begin{equation*}
+  \mathcal{M}(Q) = \mathcal{M}^0(Q) + \mathcal{M}^1(Q) = \frac{g^2}{Q^2} \left( 1 - \frac{1}{32\pi^2} \frac{g^2}{Q^2} \ln \frac{Q^2}{\Lambda^2} + \mathcal{O}(g^4) \right)
+\end{equation*}
+用观测量来表示$\tilde{g}_R^2 = \mathcal{M}(Q_0) = \tilde{g}^2 - \frac{1}{32\pi^2} \tilde{g}^4 \ln \frac{Q_0^2}{\Lambda^2} + \mathcal{O}(\tilde{g}^6)$,最终得到：
+\begin{equation*}
+  \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
+\end{equation*}
