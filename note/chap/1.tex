@@ -52,7 +52,7 @@ $\\
     Q = \int \dif^3 x \, j^0(x), \qquad \frac{\dif Q}{\dif t} = - \int \dif^3 x \, \nabla \cdot \bm{j} = 0
 \end{equation*}
 能量-动量张量 (Energy-Momentum Tensor)$T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi)} \partial^\nu \phi - \mathcal{L} g^{\mu\nu}
-$
+$\\
 u=0对应守恒菏，v=0对应时间，$v\neq0$对应空间
 \begin{align*}
     \int \dif^3 x \, T^{00} &= \int \dif^3 x \, (\pi \dot{\phi} - \mathcal{L}) = H \quad (\text{能量}) \\
@@ -72,8 +72,9 @@ K-G传播子
 \end{equation*}
 费曼传播子
 \begin{align*}
-   D_{ij}= D_F(x-y)= \bra{0} T \phi(x)\phi(y) \ket{0} = \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x-y)} 
-  
+   D_{ij}& = D_F(x_i - x_j) 
+          = \bra{0} \mathrm{T} \phi(x_i)\phi(x_j) \ket{0} \\
+          &= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x_i - x_j)} 
 \end{align*}
 
 $D_F$和$D_R$都是格林函数：
@@ -87,12 +88,12 @@ $D_F$和$D_R$都是格林函数：
 \begin{equation*}
     \phi(x) = \phi_0(x) + \ramuno \int \dif^4 y \, D_R(x-y) j(y)\, | a_{\bm{p}} \to a_{\bm{p}} + \frac{\ramuno j(p)}{\sqrt{2E_p}}
 \end{equation*}
-\subnsection{Schwinger-Dyson (SD) 方程}
+\concept{Schwinger-Dyson (SD) 方程}{}
 记号 $\braket{\dots} = \bra{\varOmega} T(\dots) \ket{\varOmega}$。对于相互作用场：
 \begin{equation*}
     (\square_x + m^2) \braket{\phi_x \phi_1 \dots \phi_n} = \braket{\mathcal{L}'_{int} \phi_1 \dots \phi_n} - \ramuno \hbar \sum_j \delta^{(4)}(x-x_j) \braket{\phi_1 \dots \cancel{\phi}_j \dots \phi_n}
 \end{equation*}
-\subnsection{LSZ 约化公式}
+\concept{LSZ 约化公式}{}
 \begin{align*}
     \ket{i} &= \sqrt{2\omega_1} \sqrt{2\omega_2} \, a_{\bm{p}_1}^\dagger(-\infty) a_{\bm{p}_2}^\dagger(-\infty) \ket{\varOmega} \\
     \ket{f} &= \sqrt{2\omega_3} \dots \sqrt{2\omega_n} \, a_{\bm{p}_3}^\dagger(+\infty) \dots a_{\bm{p}_n}^\dagger(+\infty) \ket{\varOmega}
@@ -110,7 +111,7 @@ LSZ将S联系到关联函数
 \nsection{散射问题汇总}
 \concept{散射截面Cross Section}{$\sigma \equiv \frac{}$}
 
-\subnsection{散射截面}
+
 \begin{equation*}
     \dif \sigma = \frac{1}{(2E_1)(2E_2)|\bm{v}_1 - \bm{v}_2|} |\mathcal{M}|^2 \dif \varPi_{\text{LIPS}}
 \end{equation*}
@@ -122,8 +123,8 @@ LSZ将S联系到关联函数
 \begin{equation*}
     \left( \frac{\dif \sigma}{\dif \varOmega} \right)_{\text{CM}} = \frac{1}{64\pi^2 E_{\text{cm}}^2} \frac{|\bm{p}_f|}{|\bm{p}_i|} |\mathcal{M}|^2 \Theta(E_{\text{cm}} - m_3 - m_4)
 \end{equation*}
-其中总能量守恒 $E_{\text{cm}} = E_1 + E_2 = E_3 + E_4$。
-\subnsection{衰变 (Decay)$1 \to n$的散射}
+其中总能量守恒 $E_{\text{cm}} = E_1 + E_2 = E_3 + E_4$。\\
+\concept{衰变 (Decay)$1 \to n$的散射}{}
 衰变率 $\dif \varGamma$ 定义为：
 \begin{equation*}
     \dif \varGamma =\frac{\dif P}{T}= \frac{1}{2E_1} |\mathcal{M}|^2 \dif \varPi_{\text{LIPS}}
