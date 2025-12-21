@@ -103,4 +103,15 @@ Wick定理，时序算符和收缩的来源：
 \end{tabular}
 \end{center}
 
-\nsection{Scalr}
+\nsection{Feynman Rule of Scalar QED}
+\begin{equation}
+    F_{\mu\nu} = \begin{pmatrix}
+        0& E_x& E_y& E_z\\
+        -E_x &0 & -B_z & B_y\\
+        -E_y & B_z &0 &-B_x \\
+        -E_z & -B_y & B_x &0
+    \end{pmatrix} \quad \bm{E} = - \nabla \phi - \frac{\partial \bm{A}}{\partial t}\quad \bm{B} = \nabla\times \bm A
+\end{equation}
+\begin{equation}
+    \mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - \phi^*(\square + m^2)\phi - \ramuno e A_\mu [\phi^*(\partial_mu\phi) - (\partial_\mu\phi^*)\phi] + e^2 A_\mu A^\mu |\phi|^2.
+\end{equation}
