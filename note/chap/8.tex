@@ -1,0 +1,27 @@
+\nsection{Spinors}
+\nsection{Feynman Rule of spinor QED}
+Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
+\begin{align}
+    % s-channel diagram (Annihilation)
+    \scalebox{0.5}{\feynmandiagram [vertical=p2 to p1, baseline=(current bounding box.center),every edge/.style={draw, thick}] {
+        e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1, 
+        e2 [particle = $e^+$] -- [anti fermion, momentum' = $k$] p1,
+        p1 -- [photon, edge label = $q$] p2,
+        p2 -- [fermion, edge label = $p'$] e3 [particle = $e^-$],
+        p2 -- [anti fermion, momentum' = $k'$] e4 [particle = $e^+$]
+    }; }
+    &= \scriptstyle\ramuno\iam_s = \frac{-\ramuno g_{\mu\nu}}{(p+k)^2 + \ramuno \epsilon} 
+    \left[ \bar{v}^t(k) \gamma^\mu u^s(p) \right] 
+    \left[ \bar{u}^{s'}(p') \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2, \\
+    % t-channel diagram (Scattering)
+    \scalebox{0.5}{\feynmandiagram [horizontal=p1 to p2, baseline=(current bounding box.center),every edge/.style={draw, thick}] {
+        e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1
+           -- [fermion, edge label = $p'$] e3 [particle = $e^-$],
+        p1 -- [photon, edge label' = $q$] p2,
+        e2 [particle = $e^+$] -- [anti fermion, momentum' = $k$] p2
+           -- [anti fermion, momentum' = $k'$] e4 [particle = $e^+$]
+    }; }
+    &= \scriptstyle\ramuno\iam_t = \frac{-\ramuno g_{\mu\nu}}{(p-p')^2 + \ramuno\epsilon} 
+    \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
+    \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
+\end{align}
