@@ -47,4 +47,55 @@ Wick定理，时序算符和收缩的来源：
 对一个任意给出的标量场相互作用如$\mathcal{L}_\text{int} = -g \phi_1^n \phi_2^m$，如何写出其动量空间费曼规则？确定该项相互作用顶点因子：$\mathcal{L}_\text{int}=-\frac{n! m! g}{n! m!}\phi_1^n \phi_2^m$，可见顶点因子$-\ramuno n! m! g$，每个这类顶点必须接入$n$个$\phi_1$，$m$个$
 \phi_2$；其余传播子形式等和上面一致。
 
-如果存在多个相互作用项，如何画费曼图？对每个作用项画出相应的顶点；确定要画什么费曼图，如$\braket{\phi\phi\phi\phi}$是四点函数，费曼图中有四个$\phi$外线。其0阶（即自由场无相互作用）为$D_{12}D_{34} + D_{13}D_{24} + D_{14}D_{23}$；1阶是树级的，在作用项$-\frac{g}{3!}\phi^3$理论中就是$s,t,u$通道对应的图象。这里给出$s,t,u$通道费曼图，对于$\mathcal{L} = - \frac{1}{2}\phi \square \phi - \frac{1}{2}m^2 \phi^2 + \frac{g}{3!} \phi^3 $
+如果存在多个相互作用项，如何画费曼图？对每个作用项画出相应的顶点；确定要画什么费曼图，如$\braket{\phi\phi\phi\phi}$是四点函数，费曼图中有四个$\phi$外线。其0阶（即自由场无相互作用）为$D_{12}D_{34} + D_{13}D_{24} + D_{14}D_{23}$；1阶是树级的，在作用项$-\frac{g}{3!}\phi^3$理论中就是$s,t,u$通道对应的图象。这里给出$s,t,u$通道费曼图，对于$\mathcal{L} = - \frac{1}{2}\phi \square \phi - \frac{1}{2}m^2 \phi^2 + \frac{g}{3!} \phi^3$，考虑$\phi\phi\to \phi\phi$散射，
+
+\begin{center}
+\begin{tabular}{c|c|c}
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+            \vertex (c);
+            \vertex [left=0.64cm of c] (a);
+            \vertex [right=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {$1$};
+            \vertex [above right=1.36cm of c] (p3) {$3$};
+            \vertex [below left=1.36cm of c] (p2) {$2$};
+            \vertex [below right=1.36cm of c] (p4) {$4$};
+            \diagram* {
+                (p1) --  (a),
+                (p2) -- (a),
+                (a) -- (b),
+                (b) --  (p3),
+                (b) -- (p4),
+    };\end{feynman}\end{tikzpicture}} & 
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+            \vertex (c);
+            \vertex [above=0.64cm of c] (a);
+            \vertex [below=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {$1$};
+            \vertex [above right=1.36cm of c] (p3) {$3$};
+            \vertex [below left=1.36cm of c] (p2) {$2$};
+            \vertex [below right=1.36cm of c] (p4) {$4$};
+            \diagram* {
+                (p1) --  (a),
+                (p3) -- (a),
+                (a) -- (b),
+                (b) --  (p2),
+                (b) -- (p4),
+    };\end{feynman}\end{tikzpicture}} & 
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+            \vertex (c);
+            \vertex [above=0.64cm of c] (a);
+            \vertex [below=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {$1$};
+            \vertex [above right=1.36cm of c] (p3) {$3$};
+            \vertex [below left=1.36cm of c] (p2) {$2$};
+            \vertex [below right=1.36cm of c] (p4) {$4$};
+            \diagram* {
+                (p1) --  (a),
+                (p4) -- (a),
+                (a) -- (b),
+                (b) --  (p2),
+                (b) -- (p3),
+    };\end{feynman}\end{tikzpicture}} \\
+    \scalebox{0.8}{$s=(p_1+p_2)^2 = (p_3+p_4)^2$} &\scalebox{0.8}{$t=(p_1-p_3)^2 = (p_2-p_4)^2$}&\scalebox{0.8}{$\quad u=(p_1-p_4)^2 = (p_2-p_3)^2$}
+\end{tabular}
+\end{center}
