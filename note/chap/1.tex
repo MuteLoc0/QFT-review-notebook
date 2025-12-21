@@ -107,7 +107,8 @@ LSZ将S联系到关联函数
 \end{equation*}
 其中 $
     S = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
-\begin{equation*}
+
+    \begin{equation*}
     \bra{\varOmega} T \{ \phi \dots \} \ket{\varOmega} = \frac{\bra{0} T \{ \phi_I \dots \phi_I \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}{\bra{0} T \{ \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}
 \end{equation*}
 
@@ -133,4 +134,46 @@ LSZ将S联系到关联函数
 \end{equation*}
 
 
+\nsection{路径积分}
+经典跃迁振幅：
+\begin{equation*}
+    \braket{f | i} = \mathcal{N} \int_{x_i}^{x_f} \mathcal{D}x(t) \, \eu^{\ramuno S[x]}
+\end{equation*}
+其中测度定义为 $\mathcal{D}x = \dif x_n \dots \dif x_1$，作用量 $S[x] = \int \dif t \, L[x, \dot{x}]$。
+场论中：
+\begin{equation*}
+    \braket{0, t_f | 0, t_i} = \mathcal{N} \int \mathcal{D}\phi(x,t) \, \eu^{\ramuno S}
+\end{equation*}
 
+有重要公式，路径积分插入场算符对应于编时乘积：
+\begin{equation*}
+    \mathcal{N} \int \mathcal{D}\phi(x) \, \eu^{\ramuno S} \phi(x_1) \dots \phi(x_n) = \bra{0} T \phi(x_1) \dots \phi(x_n) \ket{0}
+\end{equation*}
+类似地有归一化后的形式：
+\begin{equation*}
+    \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = \frac{\int \mathcal{D}\phi \, \eu^{\ramuno S} \phi(x_1) \dots \phi(x_n)}{\int \mathcal{D}\phi \, \eu^{\ramuno S}}
+\end{equation*}
+
+\concept{生成函数}{} 
+\begin{equation*}
+    Z[J] = \int \mathcal{D}\phi \, \eu^{\ramuno (S + \int \dif^4 x \, J(x)\phi(x))}
+\end{equation*}
+
+
+
+把$J(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$ \frac{\delta J(x)}{\delta J(y)} = \delta^{(4)}(x-y)$合并，有：
+   \begin{equation*}
+    \frac{\delta}{\delta J(x_1)} \int \dif^4 x \, J(x)\phi(x) = \phi(x_1)
+\end{equation*}
+\begin{equation*}
+    -\ramuno \frac{\delta Z}{\delta J(x_1)} = \int \mathcal{D}\phi \exp\left\{ \ramuno S[\phi] + \ramuno \int \dif^4 x \, J(x)\phi(x) \right\} \phi(x_1)
+\end{equation*}
+相互作用项可以用生成函数来表示
+\begin{equation*}
+    -\ramuno \frac{1}{Z[0]} \frac{\delta Z}{\delta J(x_1)} \bigg|_{J=0} = \frac{\int \mathcal{D}\phi \exp\{\ramuno S[\phi]\} \phi(x_1)}{\int \mathcal{D}\phi \, \eu^{\ramuno \int \dif^4 x \mathcal{L}[\phi]}} = \braket{\varOmega | \hat{\phi}(x_1) | \varOmega}
+\end{equation*}
+
+\begin{align*}
+   
+    \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = (-\ramuno)^n \frac{1}{Z[0]} \frac{\delta^n Z}{\delta J(x_1) \dots \delta J(x_n)} \bigg|_{J=0}
+\end{align*}
