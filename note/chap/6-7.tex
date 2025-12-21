@@ -52,7 +52,7 @@ Wick定理，时序算符和收缩的来源：
 
 \begin{center}
 \begin{tabular}{c|c|c}
-    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center),every edge/.style={draw, thick}]\begin{feynman}
             \vertex (c);
             \vertex [left=0.64cm of c] (a);
             \vertex [right=0.64cm of c] (b);
@@ -67,7 +67,7 @@ Wick定理，时序算符和收缩的来源：
                 (b) --  (p3),
                 (b) -- (p4),
     };\end{feynman}\end{tikzpicture}} & 
-    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center),every edge/.style={draw, thick}]\begin{feynman}
             \vertex (c);
             \vertex [above=0.64cm of c] (a);
             \vertex [below=0.64cm of c] (b);
@@ -82,7 +82,7 @@ Wick定理，时序算符和收缩的来源：
                 (b) --  (p2),
                 (b) -- (p4),
     };\end{feynman}\end{tikzpicture}} & 
-    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]\begin{feynman}
+    \scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center),every edge/.style={draw, thick}]\begin{feynman}
             \vertex (c);
             \vertex [above=0.64cm of c] (a);
             \vertex [below=0.64cm of c] (b);
@@ -110,6 +110,55 @@ Wick定理，时序算符和收缩的来源：
         -E_z & -B_y & B_x &0
     \end{pmatrix} \quad \bm{E} = - \nabla \phi - \frac{\partial \bm{A}}{\partial t}\quad \bm{B} = \nabla\times \bm A
 \end{equation}
-\begin{equation}
-    \mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} - \phi^*(\square + m^2)\phi - \ramuno e A_\mu [\phi^*(\partial_mu\phi) - (\partial_\mu\phi^*)\phi] + e^2 A_\mu A^\mu |\phi|^2.
-\end{equation}
+\begin{align}
+    \mathcal{L} &= -\frac{1}{4}F_{\mu\nu}^2 + |D_mu \phi|^2 - m^2 |\phi|^2\quad (\text{where }D_\mu = \partial_\mu + \ramuno A_\mu)\\
+    &= -\frac{1}{4}F_{\mu\nu}^2 - \phi^*(\square + m^2)\phi - \ramuno e A_\mu [\phi^*(\partial_\mu\phi) - (\partial_\mu\phi^*)\phi] + e^2 A_\mu^2|\phi|^2.
+\end{align}
+
+费曼规则：\vspace{-1em}
+\begin{itemize}[nosep]
+    \item 复标量传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,every edge/.style={draw, thick}] {a --[dashed, fermion, edge label = $p$] b};}= \frac{\ramuno}{p^2 - m^2 +\ramuno\epsilon}$
+    \item 光子传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon, edge label = $p$] b};}= \frac{\ramuno}{p^2 - m^2 +\ramuno\epsilon}$
+    \item $-\ramuno e A_\mu[\cdots]$项顶点：标量QED顶点给出的是粒子流箭头(即线上箭头)指向外侧的粒子的动量之和减去箭头指向内侧的粒子的动量的$-\ramuno e$倍。$\scalebox{0.4}{\feynmandiagram [horizontal=a to b, node distance=1cm,baseline=a to b,every edge/.style={draw, thick}] {a[particle = $e^-$] --[dashed, fermion, momentum' =$p_1$] b,b --[dashed, fermion,momentum' = $p_2$] c[particle = $e^-$], b --[photon] d};}= \frac{\ramuno}{p^2 - m^2 +\ramuno\epsilon}$
+    \item $e^2 A_\mu^2 |\phi|^2$项顶点：$\scalebox{0.4}{\begin{tikzpicture}[baseline=(current bounding box.center),every edge/.style={draw, thick}]
+  \begin{feynman}
+    \vertex (b);
+    \vertex [above left=1.2cm of b] (a) {$e^-$};
+    \vertex [above right=1.2cm of b] (c) {$e^-$};
+    \vertex [below left=1.2cm of b] (d);
+    \vertex [below right=1.2cm of b] (e);
+    \diagram* {
+      (a) -- [dashed, fermion] (b),
+      (b) -- [dashed, fermion] (c),
+      (b) -- [photon] (d),
+      (b) -- [photon] (e),
+    };
+  \end{feynman}
+\end{tikzpicture}}= 2\ramuno e^2 g_{\mu\nu}$
+\end{itemize}
+
+\begin{align}
+    % s-channel diagram (Annihilation)
+    \feynmandiagram [vertical=p2 to p1, baseline=(current bounding box.center)] {
+        e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1, 
+        e2 [particle = $e^+$] -- [anti fermion, momentum' = $k$] p1,
+        p1 -- [photon, edge label = $q$] p2,
+        p2 -- [fermion, edge label = $p'$] e3 [particle = $e^-$],
+        p2 -- [anti fermion, momentum' = $k'$] e4 [particle = $e^+$]
+    }; 
+    &= \ramuno\iam_s = \frac{-\ramuno g_{\mu\nu}}{(p+k)^2 + \ramuno \epsilon} 
+    \left[ \bar{v}^t(k) \gamma^\mu u^s(p) \right] 
+    \left[ \bar{u}^{s'}(p') \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2, \\[2em]
+    % t-channel diagram (Scattering)
+    \feynmandiagram [horizontal=p1 to p2, baseline=(current bounding box.center)] {
+        e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1
+           -- [fermion, edge label = $p'$] e3 [particle = $e^-$],
+        p1 -- [photon, edge label' = $q$] p2,
+        e2 [particle = $e^+$] -- [anti fermion, momentum' = $k$] p2
+           -- [anti fermion, momentum' = $k'$] e4 [particle = $e^+$]
+    }; 
+    &= \ramuno\iam_t = \frac{-\ramuno g_{\mu\nu}}{(p-p')^2 + \ramuno\epsilon} 
+    \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
+    \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
+\end{align}
+
