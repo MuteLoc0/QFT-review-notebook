@@ -195,3 +195,33 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
     \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
 \end{equation*}
 这表明量子守恒流的散度仅在接触项处非零。
+
+\nsection{重整化}
+\concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
+再考虑单圈级，只算$s$-channel 的单圈修正
+\begin{equation*}
+    \ramuno \mathcal{M}_2  = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
+\end{equation*}
+
+数学上可证明：
+$
+    \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
+$
+积分后得到总散射振幅：
+\begin{equation*}
+    \mathcal{M} = \mathcal{M}_1 + \mathcal{M}_2 = -\lambda - \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s}{\Lambda^2} \right)\qquad(\Lambda \text{ 是无限大的截断})
+\end{equation*}
+利用可观测量消除发散:
+定义物理耦合常数 $\lambda_R$ 为在某一能标 $s_0$ 处测得的散射振幅：
+\begin{equation*}
+    \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
+\end{equation*}
+则$
+    \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
+$,
+代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
+\begin{equation*}
+    \mathcal{M}(s) = 
+    -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
+\end{equation*}
+用一个可观测量（$\lambda_R$）来预测另一个量.
