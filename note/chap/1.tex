@@ -172,8 +172,26 @@ LSZ将S联系到关联函数
 \begin{equation*}
     -\ramuno \frac{1}{Z[0]} \frac{\delta Z}{\delta J(x_1)} \bigg|_{J=0} = \frac{\int \mathcal{D}\phi \exp\{\ramuno S[\phi]\} \phi(x_1)}{\int \mathcal{D}\phi \, \eu^{\ramuno \int \dif^4 x \mathcal{L}[\phi]}} = \braket{\varOmega | \hat{\phi}(x_1) | \varOmega}
 \end{equation*}
-
-\begin{align*}
+\begin{equation*}
    
     \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = (-\ramuno)^n \frac{1}{Z[0]} \frac{\delta^n Z}{\delta J(x_1) \dots \delta J(x_n)} \bigg|_{J=0}
-\end{align*}
+\end{equation*}
+
+\concept{Ward Identity}{}
+考虑路径积分下的诺特定理， 做变换
+\begin{equation*}
+I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D}\overline{\psi} \, \eu^{\ramuno \int \dif^4 x \left[ \overline{\psi}(\ramuno \not{\partial} - m)\psi + \dots \right]} \psi(x_1) \overline{\psi}(x_2)
+\end{equation*}
+\begin{equation*}
+    \psi(x) \to \eu^{-\ramuno \alpha(x)}\psi(x), \quad \overline{\psi}(x) \to \eu^{\ramuno \alpha(x)}\overline{\psi}(x)
+\end{equation*}
+路径积分的值 $Z$ 不变，拉氏量改变，2个$\psi$改变:\\
+   $ \ramuno \overline{\psi}(x) \not{\partial} \psi(x) \to \ramuno \overline{\psi}(x) \not{\partial} \psi(x) + \overline{\psi}(x) \gamma^\mu \psi(x) \partial_\mu \alpha(x) $\\
+    
+   $ \psi(x_1) \overline{\psi}(x_2) \to \eu^{-\ramuno \alpha(x_1)} \eu^{\ramuno \alpha(x_2)} \psi(x_1) \overline{\psi}(x_2)$
+
+由于 $\alpha(x)$ 的任意性，被积函数必须为零，从而得到 
+\begin{equation*}
+    \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
+\end{equation*}
+这表明量子守恒流的散度仅在接触项处非零。
