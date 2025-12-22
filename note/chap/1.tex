@@ -11,14 +11,10 @@ $$\scriptstyle\delta(f(x)) = \sum_{i} \frac{\delta(x - x_i)}{|f'(x_i)|}$$
     \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \right) - \frac{\partial \mathcal{L}}{\partial \phi} = 0 \implies (\partial_\mu \partial^\mu + m^2)\phi = 0 \quad (\text{KG方程})
 \end{equation*}
 在海森堡绘景下的演化方程为：
-$
-    \frac{\dif A}{\dif t} = \ramuno [H, A]
-$
-\ 其中$a_{p}|_H= \eu^{iHt} a_p  \eu^{-iHt}= a_p  \eu^{-iE_p t}$
-
+$\scriptstyle \frac{\dif A}{\dif t} = \ramuno [H, A]$
+，其中$\scriptstyle a_{p}|_H= \eu^{iHt} a_p  \eu^{-iHt}= a_p  \eu^{-iE_p t}$
 \concept{量子化}{}
 化到动量表象中，$ \scriptstyle \phi(x) = \int \frac{\dif^3 p}{(2\pi)^3}\eu^{\ramuno p \cdot x}\phi(p) $。K-G 方程 $\scriptstyle [\frac{\partial^2}{\partial t^2} + (|\bm{p}|^2 + m^2)] \phi_{\bm{p}}(t) = 0$
-
 \begin{align*}
     \scriptstyle \phi(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3 \sqrt{2E_p}} \left( a_{\bm{p}} \eu^{-\ramuno p \cdot x} + a_{\bm{p}}^\dagger \eu^{\ramuno p \cdot x} \right) \\
     \scriptstyle \pi(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3} (-\ramuno)\sqrt{\frac{E_p}{2}} \left( a_{\bm{p}} \eu^{-\ramuno p \cdot x} - a_{\bm{p}}^\dagger \eu^{\ramuno p \cdot x} \right)
@@ -153,21 +149,20 @@ LSZ将S联系到关联函数
 
 
 
-把$\scriptstyle J(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$\scriptstyle \frac{\delta J(x)}{\delta J(y)} = \delta^{(4)}(x-y)$合并，有：
+把$\scriptstyle J(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$\scriptstyle \frac{\partial J(x)}{\partial J(y)} = \delta^{(4)}(x-y)$合并，有：
    \begin{equation*}\scriptstyle
-    \frac{\delta}{\delta J(x_1)} \int \dif^4 x \, J(x)\phi(x) = \phi(x_1)
+    \frac{\partial}{\partial J(x_1)} \int \dif^4 x \, J(x)\phi(x) = \phi(x_1)
 \end{equation*}
 \begin{equation*}\scriptstyle
-    -\ramuno \frac{\delta Z}{\delta J(x_1)} = \int \mathcal{D}\phi \exp\left\{ \ramuno S[\phi] + \ramuno \int \dif^4 x \, J(x)\phi(x) \right\} \phi(x_1)
+    -\ramuno \frac{\partial Z}{\partial J(x_1)} = \int \mathcal{D}\phi \exp\left\{ \ramuno S[\phi] + \ramuno \int \dif^4 x \, J(x)\phi(x) \right\} \phi(x_1)
 \end{equation*}
 相互作用项可以用生成函数来表示
 \begin{equation*}\scriptstyle
-    -\ramuno \frac{1}{Z[0]} \frac{\delta Z}{\delta J(x_1)} \bigg|_{J=0} = \frac{\int \mathcal{D}\phi \exp\{\ramuno S[\phi]\} \phi(x_1)}{\int \mathcal{D}\phi \, \eu^{\ramuno \int \dif^4 x \mathcal{L}[\phi]}} = \braket{\varOmega | \hat{\phi}(x_1) | \varOmega}
+    -\ramuno \frac{1}{Z[0]} \frac{\partial Z}{\partial J(x_1)} \bigg|_{J=0} = \frac{\int \mathcal{D}\phi \exp\{\ramuno S[\phi]\} \phi(x_1)}{\int \mathcal{D}\phi \, \eu^{\ramuno \int \dif^4 x \mathcal{L}[\phi]}} = \braket{\varOmega | \hat{\phi}(x_1) | \varOmega}
 \end{equation*}
 \begin{equation*}\scriptstyle
-    \braket{\varOmega | T \phi(x_1) \dots \phi(x_n) | \varOmega} = (-\ramuno)^n \frac{1}{Z[0]} \frac{\delta^n Z}{\delta J(x_1) \dots \delta J(x_n)} \bigg|_{J=0}
+    \braket{\varOmega | T \{\phi(x_1) \cdots \phi(x_n)\} | \varOmega} = (-\ramuno)^n \frac{1}{Z[0]} \frac{\partial^n Z}{\partial J(x_1) \dots \partial J(x_n)} \bigg|_{J=0}
 \end{equation*}
-
 \concept{Ward Identity}{}
 考虑路径积分下的诺特定理， 做变换
 \begin{equation*}\scriptstyle
@@ -177,99 +172,16 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
     \psi(x) \to \eu^{-\ramuno \alpha(x)}\psi(x), \quad \overline{\psi}(x) \to \eu^{\ramuno \alpha(x)}\overline{\psi}(x)
 \end{equation*}
 路径积分的值 $Z$ 不变，拉氏量改变，2个$\psi$改变:\\
-\begin{align}
+\begin{align*}
     \scriptstyle  \ramuno \overline{\psi}(x) \not{\partial} \psi(x) \to \ramuno \overline{\psi}(x) \not{\partial} \psi(x) + \overline{\psi}(x) \gamma^\mu \psi(x) \partial_\mu \alpha(x) \\
     \scriptstyle \psi(x_1) \overline{\psi}(x_2) \to \eu^{-\ramuno \alpha(x_1)} \eu^{\ramuno \alpha(x_2)} \psi(x_1) \overline{\psi}(x_2)
-\end{align}    
+\end{align*}    
 由于 $\alpha(x)$ 的任意性，被积函数必须为零，从而得到 
 \begin{equation*}\scriptstyle
     \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
 \end{equation*}
 这表明量子守恒流的散度仅在接触项处非零。
-
-\nsection{重整化}
-\concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
-再考虑单圈级，只算$s$-channel 的单圈修正
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_2  =\scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]
-        \begin{feynman}
-            \vertex (c);
-            \vertex [left=0.64cm of c] (a);
-            \vertex [right=0.64cm of c] (b);
-            \vertex [above left=1.36cm of c] (p1) {\(p_1\)};
-            \vertex [above right=1.36cm of c] (p3) {\(p_3\)};
-            \vertex [below left=1.36cm of c] (p2) {\(p_2\)};
-            \vertex [below right=1.36cm of c] (p4) {\(p_4\)};
-            \diagram* {
-                (p1) --  (a),
-                (p2) -- (a),
-                (a) -- [out=71.5, in=108.5, looseness=1.5] (b),
-                (a) -- [out=-71.5, in=-108.5, looseness=1.5] (b),
-                (b) --  (p3),
-                (b) -- (p4),
-            };
-        \end{feynman}
-    \end{tikzpicture}} = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
-\end{equation*}
-数学上可证明：
-$
-    \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
-$
-积分后得到总散射振幅：
-\begin{equation*}\scriptstyle
-    \mathcal{M} = \mathcal{M}_1 + \mathcal{M}_2 = -\lambda - \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s}{\Lambda^2} \right)\qquad(\Lambda \text{ 是无限大的截断})
-\end{equation*}
-利用可观测量消除发散:
-定义物理耦合常数 $\lambda_R$ 为在某一能标 $s_0$ 处测得的散射振幅：
-\begin{equation*}\scriptstyle
-    \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
-\end{equation*}
-则$
-    \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
-$,
-代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
-\begin{equation*}\scriptstyle
-    \mathcal{M}(s) = 
-    -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
-\end{equation*}
-用一个可观测量（$\lambda_R$）来预测另一个量.
-
-\concept{$\psi^3$理论}{}
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_{\text{loop}}(p) 
-    =\scalebox{0.4}{\feynmandiagram [horizontal=a to b, baseline=(current bounding box.center)] {
-            i1 -- [ momentum=\(p\)] a,
-            b -- [momentum=\(p\)] o1,
-            a -- [momentum=\(k-p\), half left] b,
-            b -- [momentum=\(k\), half left] a,
-            };} = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
-\end{equation*}
-费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
-$k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
-积分变为：
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_{\text{loop}}(p) = \frac{g^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \int_0^1 \dif x \frac{1}{[k^2 - \Delta + \ramuno\epsilon]^2}
-\end{equation*}
-接着使用Pauli–Villars formula$\scriptstyle \int \frac{\dif^4 k}{(2\pi)^4} \frac{1}{(k^2 - \Delta + \ramuno\varepsilon)^2} = - \frac{\ramuno}{16\pi^2} \ln \frac{\Delta}{\Lambda^2}.$，并假设m=0，得到：
-\begin{equation*}\scriptstyle
-    \mathcal{M}_{\text{loop}}(p) = -\frac{g^2}{32\pi^2} \ln \frac{Q^2}{\Lambda^2}\qquad( Q^2 = -p^2 > 0)
-\end{equation*}
-加上没有圈图的情况，有：
-\begin{equation*}\scriptstyle
-  \mathcal{M}(Q) = \mathcal{M}^0(Q) + \mathcal{M}^1(Q) = \frac{g^2}{Q^2} \left( 1 - \frac{1}{32\pi^2} \frac{g^2}{Q^2} \ln \frac{Q^2}{\Lambda^2} + \mathcal{O}(g^4) \right)
-\end{equation*}
-用观测量来表示$\tilde{g}_R^2 = \mathcal{M}(Q_0) = \tilde{g}^2 - \frac{1}{32\pi^2} \tilde{g}^4 \ln \frac{Q_0^2}{\Lambda^2} + \mathcal{O}(\tilde{g}^6)$,最终得到：
-\begin{equation*}\scriptstyle
-  \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
-\end{equation*}
-\concept{维数正规化}{
-    \begin{align}
-        \scriptstyle\int \frac{\dif^d l}{(2\pi)^d} \frac{l^2}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{d}{2} \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2} - 1} \Gamma\left(\frac{2-d}{2}\right),\\
-        \scriptstyle\int\frac{\dif^d l}{(2\pi)^d} \frac{1}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2}-2}\Gamma\left(\frac{4-d}{2}\right).
-    \end{align}}
-
 \nsection{光子场量子化}
-
 \begin{equation*}
     \mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} = \frac{1}{2}(\bm{E}^2 - \bm{B}^2)\quad F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu
 \end{equation*}
@@ -280,34 +192,27 @@ $\pi^0 = \frac{\partial \mathcal{L}}{\partial \dot{A}_0} = 0 $
   ,$  \pi^i = \frac{\partial \mathcal{L}}{\partial \dot{A}_i} = -F^{0i} = E^i $
 
 \concept{Coulomb Gauge}{$\nabla \cdot \bm{A} = 0$,即$A_0 = 0$，拉氏方程:$\square \bm{A} = 0 $}
-
  $\bm{A}(x) &= \int \frac{\dif^3 p}{(2\pi)^3 }  \bm\epsilon(\bm{p})  \eu^{\ramuno p \cdot x}$
- 
-
-
 \begin{align*}
-    \bm{A}(x) &= \int \frac{\dif^3 p}{(2\pi)^3 \sqrt{2|\bm{p}|}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} + a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right] \\
-    \bm{E}(x) &= \int \frac{\dif^3 p}{(2\pi)^3} (-\ramuno)\sqrt{\frac{|\bm{p}|}{2}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} - a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right]
+    \scriptstyle \bm{A}(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3 \sqrt{2|\bm{p}|}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} + a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right] \\
+    \scriptstyle \bm{E}(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3} (-\ramuno)\sqrt{\frac{|\bm{p}|}{2}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} - a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right]
 \end{align*}
-正则对易关系：$[a_{p}^{r},a_{q}^{r\dagger}]=(2\pi)^3 \delta^{rs} \delta^{3}(p-q)$\\
-$ \epsilon_r(\bm{p}) \cdot \epsilon_s(\bm{p})=\delta_{rs} $\quad
-   $ \sum_{r=1}^2 \epsilon_r^i(\bm{p}) \epsilon_r^j(\bm{p}) = \delta^{ij} - \frac{p^i p^j}{|\bm{p}|^2} $
+正则对易关系：$\scriptstyle [a_{p}^{r},a_{q}^{r\dagger}]=(2\pi)^3 \delta^{rs} \delta^{3}(p-q)$。$\scriptstyle \epsilon_r(\bm{p}) \cdot \epsilon_s(\bm{p})=\delta_{rs}$，$\scriptstyle \sum_{r=1}^2 \epsilon_r^i(\bm{p}) \epsilon_r^j(\bm{p}) = \delta^{ij} - \frac{p^i p^j}{|\bm{p}|^2}$
 最终得到：
 \begin{equation*}
-    [A_i(\bm{x}), E_j(\bm{y})] = \ramuno \left( \delta_{ij} - \frac{\partial_i \partial_j}{\nabla^2} \right) \delta^{(3)}(\bm{x}-\bm{y}) = \ramuno \int \frac{\dif^3 p}{(2\pi)^3} \left( \delta_{ij} - \frac{p_i p_j}{|\bm{p}|^2} \right) \eu^{\ramuno \bm{p} \cdot (\bm{x}-\bm{y})}
+    \scriptstyle [A_i(\bm{x}), E_j(\bm{y})] = \ramuno \left( \delta_{ij} - \frac{\partial_i \partial_j}{\nabla^2} \right) \delta^{(3)}(\bm{x}-\bm{y}) = \ramuno \int \frac{\dif^3 p}{(2\pi)^3} \left( \delta_{ij} - \frac{p_i p_j}{|\bm{p}|^2} \right) \eu^{\ramuno \bm{p} \cdot (\bm{x}-\bm{y})}
 \end{equation*}
 \begin{equation*}
-    H = \int \frac{\dif^3 p}{(2\pi)^3} |\bm{p}| \sum_{r=1}^2 a_{\bm{p}}^{r\dagger} a_{\bm{p}}^r
+    \scriptstyle H = \int \frac{\dif^3 p}{(2\pi)^3} |\bm{p}| \sum_{r=1}^2 a_{\bm{p}}^{r\dagger} a_{\bm{p}}^r
 \end{equation*}
-
 \begin{equation*}
-    D_{ij}(x-y) = \bra{0} T A_i(x) A_j(y) \ket{0} = \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 + \ramuno\epsilon} \left( \delta_{ij} - \frac{p_i p_j}{|\bm{p}|^2} \right) \eu^{-\ramuno p \cdot (x-y)}
+    \scriptstyle D_{ij}(x-y) = \bra{0} T A_i(x) A_j(y) \ket{0} = \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 + \ramuno\epsilon} \left( \delta_{ij} - \frac{p_i p_j}{|\bm{p}|^2} \right) \eu^{-\ramuno p \cdot (x-y)}
 \end{equation*}
 
 \concept{Lorentz Gauge}{方便写出光子传播子} 
 引入协变规范固定项$
-    \mathcal{L} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2\xi} (\partial_\mu A^\mu)^2$\\
+    \scriptstyle \mathcal{L} = -\frac{1}{4} F_{\mu\nu} F^{\mu\nu} - \frac{1}{2\xi} (\partial_\mu A^\mu)^2$\\
 $A_\nu$ 的运动方程 (EOM) 在动量空间可写为：
 \begin{equation*}
-    \left[ -p^2 g^{\mu\nu} + \left( 1 - \frac{1}{\xi} \right) p^\mu p^\nu \right] A_\nu = 0
+    \scriptstyle \left[ -p^2 g^{\mu\nu} + \left( 1 - \frac{1}{\xi} \right) p^\mu p^\nu \right] A_\nu = 0
 \end{equation*}
