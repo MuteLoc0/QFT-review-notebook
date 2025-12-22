@@ -14,10 +14,12 @@ $\gamma$矩阵和洛仑兹代数
 $\gamma$矩阵性质：
     \begin{align*}
         \scriptstyle \{\gamma^\mu,\gamma^\nu\} &= 2 g^{\mu\nu},\\
-        \scriptstyle\gamma^\mu &\scriptstyle= \begin{pmatrix}
+        \scriptstyle\gamma^\mu &\scriptstyle= \left(\begin{smallmatrix}
             0 &\sigma^\mu \\
             \bar{\sigma}^\mu &0
-        \end{pmatrix},\\
+        \end{smallmatrix}\right),\quad\sigma_x = \left( \begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix} \right), \quad 
+\sigma_y = \left( \begin{smallmatrix} 0 & -i \\ i & 0 \end{smallmatrix} \right), \quad 
+\sigma_z = \left( \begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix} \right)\\
         \scriptstyle(\gamma^\mu)^\dagger &\scriptstyle= \gamma^0 \gamma^\mu \gamma^0,\quad \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
         \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\quad\text{Tr}[\gamma^{\mu_1} \dots \gamma^{\mu_n}] = \text{Tr}[\gamma^{\mu_n} \dots \gamma^{\mu_1}]\\
         \scriptstyle\text{Tr}[\gamma^\alpha \gamma^\mu \gamma^\beta \gamma^\nu] &\scriptstyle= 4 (g^{\alpha\mu}g^{\beta\nu} + g^{\alpha\nu}g^{\mu\beta} - g^{\alpha\beta}g^{\mu\nu}),\\
@@ -29,14 +31,14 @@ $\gamma$矩阵性质：
 \concept{Dirac equation*}{在Weyl spinors表象下}
 \begin{equation*}
         \scriptstyle(\ramuno \gamma^\mu \partial_\mu - m)\psi = \begin{pmatrix}
-            -m & \ramuno \sigma\cdot \partial\\
-            \ramuno \bar{\sigma}\cdot \partial & -m
+            \scriptstyle-m &\scriptstyle \ramuno \sigma\cdot \partial\\
+            \scriptstyle\ramuno \bar{\sigma}\cdot \partial &\scriptstyle -m
         \end{pmatrix}\begin{pmatrix}
-            \psi_L\\
-            \psi_R
+            \scriptstyle\psi_L\\
+            \scriptstyle\psi_R
         \end{pmatrix} = 0.
 \end{equation*}
-据$\scriptstyle\varLambda_s^{-1}\gamma^\mu \varLambda_s = {(\varLambda_v)^\mu}_\nu \gamma^\nu$在洛仑兹变换下不变。其平面波解$\phi = u_s(p)\eu^{-\ramuno p x}$和$v_s(p)\eu^{\ramuno p x}$，$s=1,2$描述偏振方向，其中
+据$\scriptstyle\varLambda_s^{-1}\gamma^\mu \varLambda_s = {(\varLambda_v)^\mu}_\nu \gamma^\nu$在洛仑兹变换下不变。其平面波解$\scriptstyle\phi = u_s(p)\eu^{-\ramuno p x}$和$\scriptstyle v_s(p)\eu^{\ramuno p x}$，$s=1,2$描述偏振方向，其中
 \begin{equation*}
     \scriptstyle u_s = \begin{pmatrix}
         \scriptstyle \sqrt{p\cdot\sigma}\zeta_s \\
@@ -47,7 +49,6 @@ $\gamma$矩阵性质：
     \end{pmatrix}
 \end{equation*}
 有定义$\bar{\psi} \equiv \psi^\dagger \gamma^0$。自旋求和完整关系$\scriptstyle\sum_{s=1,2}  u_s \bar{u}_s = \gamma^\mu p_\mu + m$与$\scriptstyle\sum_{s} v^s(p) \bar{v}^s(p) = \not{p} - m$，正交关系$\scriptstyle\bar{u}_r u_s = 2m \delta_{rs}$
-
 \begin{align*}
     \scriptstyle\psi(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^s u^s(p) e^{-ip\cdot x} + b_p^{s\dagger} v^s(p) e^{ip\cdot x} \right)\\
     \scriptstyle\bar{\psi}(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^{s\dagger} \bar{u}^s(p) e^{ip\cdot x} + b_p^s \bar{v}^s(p) e^{-ip\cdot x} \right)\\
