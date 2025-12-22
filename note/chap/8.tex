@@ -13,15 +13,15 @@ $\gamma$矩阵和洛仑兹代数
 
 $\gamma$矩阵性质：
     \begin{align*}
-        \{\gamma^\mu,\gamma^\nu\} &= 2 g^{\mu\nu},\\
+        \scriptstyle \{\gamma^\mu,\gamma^\nu\} &= 2 g^{\mu\nu},\\
         \scriptstyle\gamma^\mu &\scriptstyle= \begin{pmatrix}
             0 &\sigma^\mu \\
             \bar{\sigma}^\mu &0
-        \end{pmatrix}, \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
+        \end{pmatrix},\quad \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
         \scriptstyle(\gamma^\mu)^\dagger &\scriptstyle= \gamma^0 \gamma^\mu \gamma^0,\\
-        \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\\
+        \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\quad\text{Tr}[\gamma^{\mu_1} \dots \gamma^{\mu_n}] = \text{Tr}[\gamma^{\mu_n} \dots \gamma^{\mu_1}]\\
         \scriptstyle\text{Tr}[\gamma^\alpha \gamma^\mu \gamma^\beta \gamma^\nu] &\scriptstyle= 4 (g^{\alpha\mu}g^{\beta\nu} + g^{\alpha\nu}g^{\mu\beta} - g^{\alpha\beta}g^{\mu\nu}),\\
-        \scriptstyle\gamma_\mu \slashed{a}\slashed{b} \gamma^\mu &\scriptstyle= 4(a\cdot b)I_4,\\
+        \scriptstyle\gamma_\mu \slashed{a}\slashed{b} \gamma^\mu &\scriptstyle= 4(a\cdot b)I_4,\quad \text{Tr}[\text{odd number of } \gamma] = 0\\
         \scriptstyle\gamma_\mu \slashed{a}\slashed{b}\slashed{c} \gamma^\mu &\scriptstyle= -2\slashed{c}\slashed{b}\slashed{a}.
     \end{align*}
 另外$\scriptstyle (p\cdot{\sigma})(p\cdot\bar{\sigma})=m^2 \mathbb{1}_2.$
@@ -46,7 +46,12 @@ $\gamma$矩阵性质：
         \scriptstyle -\sqrt{p\cdot \bar{\sigma}}\eta_s
     \end{pmatrix}
 \end{equation}
-有定义$\bar{\psi} \equiv \psi^\dagger \gamma^0$。自旋求和完整关系$\scriptstyle\sum_{s=1,2} u_s \bar{u}_s\gamma^\mu p_\mu + m$，正交关系$\scriptstyle\bar{u}_r u_s = 2m \delta_{rs}$
+有定义$\bar{\psi} \equiv \psi^\dagger \gamma^0$。自旋求和完整关系$\scriptstyle\sum_{s=1,2}  u_s \bar{u}_s = \gamma^\mu p_\mu + m$与$\scriptstyle\sum_{s} v^s(p) \bar{v}^s(p) = \not{p} - m$，正交关系$\scriptstyle\bar{u}_r u_s = 2m \delta_{rs}$
+
+\begin{align}
+    \scriptstyle\psi(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^s u^s(p) e^{-ip\cdot x} + b_p^{s\dagger} v^s(p) e^{ip\cdot x} \right)\\
+    \scriptstyle\bar{\psi}(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^{s\dagger} \bar{u}^s(p) e^{ip\cdot x} + b_p^s \bar{v}^s(p) e^{-ip\cdot x} \right)
+\end{align}
 
 \nsection{Feynman Rule of spinor QED}
 可能用到的公式\concept{Dyson series}{
@@ -108,6 +113,87 @@ Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
     \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
     \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
 \end{align*}
+
+\nsection{重整化}
+\concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
+再考虑单圈级，只算$s$-channel 的单圈修正
+\begin{equation*}\scriptstyle
+    \ramuno \mathcal{M}_2  =\scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{feynman}
+            \vertex (c);
+            \vertex [left=0.64cm of c] (a);
+            \vertex [right=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {\(p_1\)};
+            \vertex [above right=1.36cm of c] (p3) {\(p_3\)};
+            \vertex [below left=1.36cm of c] (p2) {\(p_2\)};
+            \vertex [below right=1.36cm of c] (p4) {\(p_4\)};
+            \diagram* {
+                (p1) --  (a),
+                (p2) -- (a),
+                (a) -- [out=71.5, in=108.5, looseness=1.5] (b),
+                (a) -- [out=-71.5, in=-108.5, looseness=1.5] (b),
+                (b) --  (p3),
+                (b) -- (p4),
+            };
+        \end{feynman}
+    \end{tikzpicture}} = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
+\end{equation*}
+数学上可证明：
+$
+    \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
+$
+积分后得到总散射振幅：
+\begin{equation*}\scriptstyle
+    \mathcal{M} = \mathcal{M}_1 + \mathcal{M}_2 = -\lambda - \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s}{\Lambda^2} \right)\qquad(\Lambda \text{ 是无限大的截断})
+\end{equation*}
+利用可观测量消除发散:
+定义物理耦合常数 $\lambda_R$ 为在某一能标 $s_0$ 处测得的散射振幅：
+\begin{equation*}\scriptstyle
+    \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
+\end{equation*}
+则$
+    \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
+$,
+代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
+\begin{equation*}\scriptstyle
+    \mathcal{M}(s) = 
+    -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
+\end{equation*}
+用一个可观测量（$\lambda_R$）来预测另一个量.
+
+\concept{$\psi^3$理论}{}
+\begin{equation*}\scriptstyle
+    \ramuno \mathcal{M}_{\text{loop}}(p) 
+    =\scalebox{0.4}{\feynmandiagram [horizontal=a to b, baseline=(current bounding box.center)] {
+            i1 -- [ momentum=\(p\)] a,
+            b -- [momentum=\(p\)] o1,
+            a -- [momentum=\(k-p\), half left] b,
+            b -- [momentum=\(k\), half left] a,
+            };} = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
+\end{equation*}
+费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
+$k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
+积分变为：
+\begin{equation*}\scriptstyle
+    \ramuno \mathcal{M}_{\text{loop}}(p) = \frac{g^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \int_0^1 \dif x \frac{1}{[k^2 - \Delta + \ramuno\epsilon]^2}
+\end{equation*}
+接着使用Pauli–Villars formula$\scriptstyle \int \frac{\dif^4 k}{(2\pi)^4} \frac{1}{(k^2 - \Delta + \ramuno\varepsilon)^2} = - \frac{\ramuno}{16\pi^2} \ln \frac{\Delta}{\Lambda^2}.$，并假设m=0，得到：
+\begin{equation*}\scriptstyle
+    \mathcal{M}_{\text{loop}}(p) = -\frac{g^2}{32\pi^2} \ln \frac{Q^2}{\Lambda^2}\qquad( Q^2 = -p^2 > 0)
+\end{equation*}
+加上没有圈图的情况，有：
+\begin{equation*}\scriptstyle
+  \mathcal{M}(Q) = \mathcal{M}^0(Q) + \mathcal{M}^1(Q) = \frac{g^2}{Q^2} \left( 1 - \frac{1}{32\pi^2} \frac{g^2}{Q^2} \ln \frac{Q^2}{\Lambda^2} + \mathcal{O}(g^4) \right)
+\end{equation*}
+用观测量来表示$\tilde{g}_R^2 = \mathcal{M}(Q_0) = \tilde{g}^2 - \frac{1}{32\pi^2} \tilde{g}^4 \ln \frac{Q_0^2}{\Lambda^2} + \mathcal{O}(\tilde{g}^6)$,最终得到：
+\begin{equation*}\scriptstyle
+  \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
+\end{equation*}
+\concept{维数正规化}{
+    \begin{align}
+        \scriptstyle\int \frac{\dif^d l}{(2\pi)^d} \frac{l^2}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{d}{2} \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2} - 1} \Gamma\left(\frac{2-d}{2}\right),\\
+        \scriptstyle\int\frac{\dif^d l}{(2\pi)^d} \frac{1}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2}-2}\Gamma\left(\frac{4-d}{2}\right).
+    \end{align}}
 
 TODO：1. 符号 2. 旋量传播子
 3. 重整化第三部分 4. 光子场

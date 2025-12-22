@@ -72,8 +72,7 @@ K-G传播子
 费曼传播子
 \begin{align*}\scriptstyle
    D_{ij}& \scriptstyle= D_F(x_i - x_j) 
-          = \bra{0} \mathrm{T} \phi(x_i)\phi(x_j) \ket{0} \\
-          &\scriptstyle= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x_i - x_j)} 
+          = \bra{0} \mathrm{T} \phi(x_i)\phi(x_j) \ket{0}\scriptstyle= \int \frac{\dif^4 p}{(2\pi)^4} \frac{\ramuno}{p^2 - m^2 + \ramuno\epsilon} \eu^{-\ramuno p \cdot (x_i - x_j)} 
 \end{align*}
 
 $D_F$和$D_R$都是格林函数：
@@ -101,7 +100,7 @@ LSZ将S联系到关联函数
 \begin{equation*}\scriptstyle
     \braket{f | S | i} = \left[ -\ramuno \int \dif^4 x_1 \, \eu^{-\ramuno p_1 x_1} (\square_1 + m^2) \right] \dots \bra{\varOmega} T \phi(x_1) \phi(x_2) \dots \ket{\varOmega}
 \end{equation*}
-其中 $\scriptstyleS = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
+其中 $\scriptstyle S = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
 \begin{equation*}\scriptstyle
     \bra{\varOmega} T \{ \phi \dots \} \ket{\varOmega} = \frac{\bra{0} T \{ \phi_I \dots \phi_I \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}{\bra{0} T \{ \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}
 \end{equation*}
@@ -187,84 +186,3 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
     \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
 \end{equation*}
 这表明量子守恒流的散度仅在接触项处非零。
-
-\nsection{重整化}
-\concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
-再考虑单圈级，只算$s$-channel 的单圈修正
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_2  =\scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]
-        \begin{feynman}
-            \vertex (c);
-            \vertex [left=0.64cm of c] (a);
-            \vertex [right=0.64cm of c] (b);
-            \vertex [above left=1.36cm of c] (p1) {\(p_1\)};
-            \vertex [above right=1.36cm of c] (p3) {\(p_3\)};
-            \vertex [below left=1.36cm of c] (p2) {\(p_2\)};
-            \vertex [below right=1.36cm of c] (p4) {\(p_4\)};
-            \diagram* {
-                (p1) --  (a),
-                (p2) -- (a),
-                (a) -- [out=71.5, in=108.5, looseness=1.5] (b),
-                (a) -- [out=-71.5, in=-108.5, looseness=1.5] (b),
-                (b) --  (p3),
-                (b) -- (p4),
-            };
-        \end{feynman}
-    \end{tikzpicture}} = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
-\end{equation*}
-数学上可证明：
-$
-    \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
-$
-积分后得到总散射振幅：
-\begin{equation*}\scriptstyle
-    \mathcal{M} = \mathcal{M}_1 + \mathcal{M}_2 = -\lambda - \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s}{\Lambda^2} \right)\qquad(\Lambda \text{ 是无限大的截断})
-\end{equation*}
-利用可观测量消除发散:
-定义物理耦合常数 $\lambda_R$ 为在某一能标 $s_0$ 处测得的散射振幅：
-\begin{equation*}\scriptstyle
-    \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
-\end{equation*}
-则$
-    \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
-$,
-代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
-\begin{equation*}\scriptstyle
-    \mathcal{M}(s) = 
-    -\lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s}{s_0} \right)
-\end{equation*}
-用一个可观测量（$\lambda_R$）来预测另一个量.
-
-\concept{$\psi^3$理论}{}
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_{\text{loop}}(p) 
-    =\scalebox{0.4}{\feynmandiagram [horizontal=a to b, baseline=(current bounding box.center)] {
-            i1 -- [ momentum=\(p\)] a,
-            b -- [momentum=\(p\)] o1,
-            a -- [momentum=\(k-p\), half left] b,
-            b -- [momentum=\(k\), half left] a,
-            };} = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
-\end{equation*}
-费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
-$k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
-积分变为：
-\begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_{\text{loop}}(p) = \frac{g^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \int_0^1 \dif x \frac{1}{[k^2 - \Delta + \ramuno\epsilon]^2}
-\end{equation*}
-接着使用Pauli–Villars formula$\scriptstyle \int \frac{\dif^4 k}{(2\pi)^4} \frac{1}{(k^2 - \Delta + \ramuno\varepsilon)^2} = - \frac{\ramuno}{16\pi^2} \ln \frac{\Delta}{\Lambda^2}.$，并假设m=0，得到：
-\begin{equation*}\scriptstyle
-    \mathcal{M}_{\text{loop}}(p) = -\frac{g^2}{32\pi^2} \ln \frac{Q^2}{\Lambda^2}\qquad( Q^2 = -p^2 > 0)
-\end{equation*}
-加上没有圈图的情况，有：
-\begin{equation*}\scriptstyle
-  \mathcal{M}(Q) = \mathcal{M}^0(Q) + \mathcal{M}^1(Q) = \frac{g^2}{Q^2} \left( 1 - \frac{1}{32\pi^2} \frac{g^2}{Q^2} \ln \frac{Q^2}{\Lambda^2} + \mathcal{O}(g^4) \right)
-\end{equation*}
-用观测量来表示$\tilde{g}_R^2 = \mathcal{M}(Q_0) = \tilde{g}^2 - \frac{1}{32\pi^2} \tilde{g}^4 \ln \frac{Q_0^2}{\Lambda^2} + \mathcal{O}(\tilde{g}^6)$,最终得到：
-\begin{equation*}\scriptstyle
-  \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
-\end{equation*}
-\concept{维数正规化}{
-    \begin{align}
-        \scriptstyle\int \frac{\dif^d l}{(2\pi)^d} \frac{l^2}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{d}{2} \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2} - 1} \Gamma\left(\frac{2-d}{2}\right),\\
-        \scriptstyle\int\frac{\dif^d l}{(2\pi)^d} \frac{1}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2}-2}\Gamma\left(\frac{4-d}{2}\right).
-    \end{align}}
