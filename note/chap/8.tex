@@ -1,7 +1,38 @@
 \nsection{Spinors}
+$\gamma$矩阵和洛仑兹代数
+\begin{equation}
+    \scriptstyle\left[S^{\mu\nu},S^{\rho\sigma}\right] = \ramuno \big(
+            g^{\nu\rho}S^{\mu\sigma}-g^{\mu\rho}S^{\nu\sigma}-g^{\nu\sigma}S^{\mu\rho}+g^{\mu\sigma}S^{\nu\rho}
+        \big).
+\end{equation}
+无限小变化${T^\mu}_\nu = {\delta^\mu}_\nu + {\theta^\mu}_\nu$下，矢量表象的洛仑兹变换满足
+    \begin{equation}
+        \scriptstyle {(\varLambda_v)^\mu}_\nu = {\delta^\mu}_\nu + \ramuno \theta_{\rho\sigma}{(M^{\rho\sigma})^\mu}_\nu,
+    \end{equation}
+    其中 ${(M^{\rho\sigma})^\mu}_\nu$ 也有洛仑兹代数$\scriptstyle [M^{ab},M^{cd}] = \ramuno\big(-g^{ac} M^{bd} + (a\leftrightarrow b)\big)-(c\leftrightarrow d)$，一种显示表示是$\scriptstyle{(M^{\rho\sigma})^\mu}_\nu = \ramuno(g^{\rho\mu}{\delta^\sigma}_\nu - {\delta^\rho}_\nu g^{\sigma\mu})$。
+
+$\gamma$矩阵性质：
+    \begin{align*}
+        \scriptstyle\gamma^\mu &\scriptstyle= \begin{pmatrix}
+            0 &\sigma^\mu \\
+            \bar{\sigma}^\mu &0
+        \end{pmatrix}, \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
+        \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\\
+        \scriptstyle\text{Tr}[\gamma^\alpha \gamma^\mu \gamma^\beta \gamma^\nu] &\scriptstyle= 4 (g^{\alpha\mu}g^{\beta\nu} + g^{\alpha\nu}g^{\mu\beta} - g^{\alpha\beta}g^{\mu\nu}),\\
+        \scriptstyle\gamma_\mu \slashed{a}\slashed{b} \gamma^\mu &\scriptstyle= 4(a\cdot b)I_4,\\
+        \scriptstyle\gamma_\mu \slashed{a}\slashed{b}\slashed{c} \gamma^\mu &\scriptstyle= -2\slashed{c}\slashed{b}\slashed{a}.
+    \end{align*}
 \nsection{Feynman Rule of spinor QED}
+可能用到的公式\concept{Dyson series}{
+    $H = H_0 + H_I$，时间演化因子$\scriptstyle U(t,t_0) = T\left\{ \exp \left[-\ramuno\int_{t_0}^t\dif t' H_I(t') \right]\right\}$并有$\scriptstyle S = \lim_{t \to \infty,\ t_0 \to -\infty} U(t, t_0) = \sum_{n=0}^{\infty} S^{(n)}$，Dyson级数展开为
+    \begin{equation*}
+        \scriptstyle U(t,t_0) = 1- \ramuno \int_{t_0}^t \dif t' H_I(t') - \frac{1}{2}\int_{t_0}^t \dif t' \int_{t_0}^t \dif t'' T\{H_I(t')H_I(t'')\}+ \cdots.
+    \end{equation*}
+}
+
+
 Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
-\begin{align}
+\begin{align*}
     % s-channel diagram (Annihilation)
     \scalebox{0.5}{\feynmandiagram [vertical=p2 to p1, baseline=(current bounding box.center),every edge/.style={draw, thick}] {
         e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1, 
@@ -24,4 +55,4 @@ Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
     &= \scriptstyle\ramuno\iam_t = \frac{-\ramuno g_{\mu\nu}}{(p-p')^2 + \ramuno\epsilon} 
     \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
     \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
-\end{align}
+\end{align*}
