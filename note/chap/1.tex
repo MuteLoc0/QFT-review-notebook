@@ -95,17 +95,15 @@ $D_F$和$D_R$都是格林函数：
 \end{equation*}
 \concept{LSZ 约化公式}{}
 \begin{align*}
-    \ket{i} &= \sqrt{2\omega_1} \sqrt{2\omega_2} \, a_{\bm{p}_1}^\dagger(-\infty) a_{\bm{p}_2}^\dagger(-\infty) \ket{\varOmega} \\
-    \ket{f} &= \sqrt{2\omega_3} \dots \sqrt{2\omega_n} \, a_{\bm{p}_3}^\dagger(+\infty) \dots a_{\bm{p}_n}^\dagger(+\infty) \ket{\varOmega}
+    \scriptstyle\ket{i} &\scriptstyle= \sqrt{2\omega_1} \sqrt{2\omega_2} \, a_{\bm{p}_1}^\dagger(-\infty) a_{\bm{p}_2}^\dagger(-\infty) \ket{\varOmega} \\
+    \scriptstyle\ket{f} &\scriptstyle= \sqrt{2\omega_3} \dots \sqrt{2\omega_n} \, a_{\bm{p}_3}^\dagger(+\infty) \dots a_{\bm{p}_n}^\dagger(+\infty) \ket{\varOmega}
 \end{align*}
 LSZ将S联系到关联函数
 \begin{equation*}\scriptstyle
     \braket{f | S | i} = \left[ -\ramuno \int \dif^4 x_1 \, \eu^{-\ramuno p_1 x_1} (\square_1 + m^2) \right] \dots \bra{\varOmega} T \phi(x_1) \phi(x_2) \dots \ket{\varOmega}
 \end{equation*}
-其中 $
-    S = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
-
-    \begin{equation*}\scriptstyle
+其中 $\scriptstyleS = \bm{1} + \ramuno (2\pi)^4 \delta^{(4)}(\sum p) \mathcal{M}$
+\begin{equation*}\scriptstyle
     \bra{\varOmega} T \{ \phi \dots \} \ket{\varOmega} = \frac{\bra{0} T \{ \phi_I \dots \phi_I \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}{\bra{0} T \{ \exp(\ramuno \int \dif^4 x \mathcal{L}_{\text{int}}) \} \ket{0}}
 \end{equation*}
 
@@ -141,7 +139,6 @@ LSZ将S联系到关联函数
 \begin{equation*}\scriptstyle
     \braket{0, t_f | 0, t_i} = \mathcal{N} \int \mathcal{D}\phi(x,t) \, \eu^{\ramuno S}
 \end{equation*}
-
 有重要公式，路径积分插入场算符对应于编时乘积：
 \begin{equation*}\scriptstyle
     \mathcal{N} \int \mathcal{D}\phi(x) \, \eu^{\ramuno S} \phi(x_1) \dots \phi(x_n) = \bra{0} T \phi(x_1) \dots \phi(x_n) \ket{0}
@@ -158,7 +155,7 @@ LSZ将S联系到关联函数
 
 
 
-把$\scriptstyleJ(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$\scriptstyle \frac{\delta J(x)}{\delta J(y)} = \delta^{(4)}(x-y)$合并，有：
+把$\scriptstyle J(y) = \int \dif^4 x \, \delta^{(4)}(x-y) J(x)$ 和$\scriptstyle \frac{\delta J(x)}{\delta J(y)} = \delta^{(4)}(x-y)$合并，有：
    \begin{equation*}\scriptstyle
     \frac{\delta}{\delta J(x_1)} \int \dif^4 x \, J(x)\phi(x) = \phi(x_1)
 \end{equation*}
@@ -196,9 +193,26 @@ I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D
 \concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
 再考虑单圈级，只算$s$-channel 的单圈修正
 \begin{equation*}\scriptstyle
-    \ramuno \mathcal{M}_2  = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
+    \ramuno \mathcal{M}_2  =\scalebox{0.5}{\begin{tikzpicture}[baseline=(current bounding box.center)]
+        \begin{feynman}
+            \vertex (c);
+            \vertex [left=0.64cm of c] (a);
+            \vertex [right=0.64cm of c] (b);
+            \vertex [above left=1.36cm of c] (p1) {\(p_1\)};
+            \vertex [above right=1.36cm of c] (p3) {\(p_3\)};
+            \vertex [below left=1.36cm of c] (p2) {\(p_2\)};
+            \vertex [below right=1.36cm of c] (p4) {\(p_4\)};
+            \diagram* {
+                (p1) --  (a),
+                (p2) -- (a),
+                (a) -- [out=71.5, in=108.5, looseness=1.5] (b),
+                (a) -- [out=-71.5, in=-108.5, looseness=1.5] (b),
+                (b) --  (p3),
+                (b) -- (p4),
+            };
+        \end{feynman}
+    \end{tikzpicture}} = \frac{(-\ramuno \lambda)^2}{2} \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{k^2 + \ramuno \epsilon} \frac{\ramuno}{(p-k)^2 + \ramuno \epsilon}
 \end{equation*}
-
 数学上可证明：
 $
     \frac{\dif \mathcal{M}_2}{\dif s} \sim -\frac{\lambda^2}{32\pi^2} \frac{1}{s}
@@ -225,7 +239,12 @@ $,
 \concept{$\psi^3$理论}{}
 \begin{equation*}\scriptstyle
     \ramuno \mathcal{M}_{\text{loop}}(p) 
-    = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
+    =\scalebox{0.4}{\feynmandiagram [horizontal=a to b, baseline=(current bounding box.center)] {
+            i1 -- [ momentum=\(p\)] a,
+            b -- [momentum=\(p\)] o1,
+            a -- [momentum=\(k-p\), half left] b,
+            b -- [momentum=\(k\), half left] a,
+            };} = \frac{1}{2}(\ramuno g)^2 \int \frac{\dif^4 k}{(2\pi)^4} \frac{\ramuno}{(k-p)^2 - m^2 + \ramuno\epsilon} \frac{\ramuno}{k^2 - m^2 + \ramuno\epsilon}
 \end{equation*}
 费曼参数化(Feynman Parameters)变分母 $\frac{1}{AB} = \int_0^1 \dif x \frac{1}{[A+(B-A)x]^2}$，然后做平移：
 $k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。

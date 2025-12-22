@@ -13,15 +13,41 @@ $\gamma$矩阵和洛仑兹代数
 
 $\gamma$矩阵性质：
     \begin{align*}
+        \{\gamma^\mu,\gamma^\nu\} &= 2 g^{\mu\nu},\\
         \scriptstyle\gamma^\mu &\scriptstyle= \begin{pmatrix}
             0 &\sigma^\mu \\
             \bar{\sigma}^\mu &0
         \end{pmatrix}, \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
+        \scriptstyle(\gamma^\mu)^\dagger &\scriptstyle= \gamma^0 \gamma^\mu \gamma^0,\\
         \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\\
         \scriptstyle\text{Tr}[\gamma^\alpha \gamma^\mu \gamma^\beta \gamma^\nu] &\scriptstyle= 4 (g^{\alpha\mu}g^{\beta\nu} + g^{\alpha\nu}g^{\mu\beta} - g^{\alpha\beta}g^{\mu\nu}),\\
         \scriptstyle\gamma_\mu \slashed{a}\slashed{b} \gamma^\mu &\scriptstyle= 4(a\cdot b)I_4,\\
         \scriptstyle\gamma_\mu \slashed{a}\slashed{b}\slashed{c} \gamma^\mu &\scriptstyle= -2\slashed{c}\slashed{b}\slashed{a}.
     \end{align*}
+另外$\scriptstyle (p\cdot{\sigma})(p\cdot\bar{\sigma})=m^2 \mathbb{1}_2.$
+
+\concept{Dirac equation}{在Weyl spinors表象下}
+\begin{equation*}
+        \scriptstyle(\ramuno \gamma^\mu \partial_\mu - m)\psi = \begin{pmatrix}
+            -m & \ramuno \sigma\cdot \partial\\
+            \ramuno \bar{\sigma}\cdot \partial & -m
+        \end{pmatrix}\begin{pmatrix}
+            \psi_L\\
+            \psi_R
+        \end{pmatrix} = 0.
+\end{equation*}
+据$\scriptstyle\varLambda_s^{-1}\gamma^\mu \varLambda_s = {(\varLambda_v)^\mu}_\nu \gamma^\nu$在洛仑兹变换下不变。其平面波解$\phi = u_s(p)\eu^{-\ramuno p x}$和$v_s(p)\eu^{\ramuno p x}$，$s=1,2$描述偏振方向，其中
+\begin{equation}
+    \scriptstyle u_s = \begin{pmatrix}
+        \scriptstyle \sqrt{p\cdot\sigma}\zeta_s \\
+        \scriptstyle \sqrt{p\cdot\bar{\sigma}}\zeta_s
+    \end{pmatrix} \quad v_s = \begin{pmatrix}
+        \scriptstyle \sqrt{p\cdot \sigma}\eta_s\\
+        \scriptstyle -\sqrt{p\cdot \bar{\sigma}}\eta_s
+    \end{pmatrix}
+\end{equation}
+同时$\bar{\psi} \equiv \psi^\dagger \gamma^0$
+
 \nsection{Feynman Rule of spinor QED}
 可能用到的公式\concept{Dyson series}{
     $H = H_0 + H_I$，时间演化因子$\scriptstyle U(t,t_0) = T\left\{ \exp \left[-\ramuno\int_{t_0}^t\dif t' H_I(t') \right]\right\}$并有$\scriptstyle S = \lim_{t \to \infty,\ t_0 \to -\infty} U(t, t_0) = \sum_{n=0}^{\infty} S^{(n)}$，Dyson级数展开为
@@ -29,8 +55,21 @@ $\gamma$矩阵性质：
         \scriptstyle U(t,t_0) = 1- \ramuno \int_{t_0}^t \dif t' H_I(t') - \frac{1}{2}\int_{t_0}^t \dif t' \int_{t_0}^t \dif t'' T\{H_I(t')H_I(t'')\}+ \cdots.
     \end{equation*}
 }
-
-
+$e^-$反子的粒子流方向和动量方向一致，而带有$e^+$电荷的正子粒子流方向和动量方向相反。
+\begin{itemize}[nosep]
+    \item 光子传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon, edge label = $p$] b};}= \textstyle \frac{-\ramuno}{p^2 +\ramuno\epsilon}\left[g_{\mu\nu} - (1-\xi)\frac{p_\mu p_\nu}{p^2}\right]$，一般在费曼规范下$\xi=1$为$\scriptstyle \frac{-\ramuno g_{\mu\nu}}{p^2+\ramuno\epsilon}$
+    \item 旋量传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[fermion, edge label = $p$] b};}= \frac{\ramuno(\slashed{p}+m)}{p^2 - m^2 +\ramuno\epsilon}$
+    \item 外线光子：\begin{align}
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon] b[dot]};} &\scriptstyle= \epsilon_\mu (p)\quad\text{传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[photon] b};}&\scriptstyle=\epsilon^*_\mu (p)\quad \text{传出}
+    \end{align}
+    \item 外线旋量：\begin{align}
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[fermion] b[dot]};} &\scriptstyle= u^s (p)\quad\text{传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[fermion] b};}&\scriptstyle=\bar u^s (p)\quad \text{传出}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[anti fermion] b[dot]};} &\scriptstyle= \bar v^s(p)\quad\text{动量传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[anti fermion] b};}&\scriptstyle=v^s (p)\quad \text{动量传出}
+    \end{align}
+\end{itemize}
 Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
 \begin{align*}
     % s-channel diagram (Annihilation)
@@ -56,3 +95,6 @@ Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
     \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
     \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
 \end{align*}
+
+TODO：1. 符号 2. 旋量传播子
+3. 重整化第三部分 4. 光子场

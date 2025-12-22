@@ -118,7 +118,7 @@ Wick定理，时序算符和收缩的来源：
 \begin{itemize}[nosep]
     \item 复标量传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,every edge/.style={draw, thick}] {a --[dashed, fermion, edge label = $p$] b};}=\textstyle \frac{\ramuno}{p^2 - m^2 +\ramuno\epsilon}$
     \item 光子传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon, edge label = $p$] b};}= \textstyle \frac{-\ramuno}{p^2 +\ramuno\epsilon}\left[g_{\mu\nu} - (1-\xi)\frac{p_\mu p_\nu}{p^2}\right]$，费曼规范下$\xi=1$，郎道规范$\xi = 0$
-    \item $-\ramuno e A_\mu[\cdots]$项顶点：标量QED顶点给出的是粒子流箭头(即线上箭头)指向外侧的粒子的动量之和减去箭头指向内侧的粒子的动量的$-\ramuno e$倍。$\scalebox{0.4}{\feynmandiagram [horizontal=a to b, node distance=1cm,baseline=a to b,every edge/.style={draw, thick}] {a[particle = $e^-$] --[dashed, fermion, momentum' =$p_1$] b,b --[dashed, fermion,momentum' = $p_2$] c[particle = $e^-$], b --[photon] d};}= \frac{\ramuno}{p^2 - m^2 +\ramuno\epsilon}$
+    \item $-\ramuno e A_\mu[\cdots]$项顶点：标量QED顶点给出的是粒子流箭头(即线上箭头)指向外侧的粒子的动量之和减去箭头指向内侧的粒子的动量的$-\ramuno e$倍。$\scalebox{0.4}{\feynmandiagram [horizontal=a to b, node distance=1cm,baseline=a to b,every edge/.style={draw, thick}] {a[particle = $e^-$] --[dashed, fermion, momentum' =$p_1$] b,b --[dashed, fermion,momentum' = $p_2$] c[particle = $e^-$], b --[photon] d};}= -\ramuno e (p_1 +p_2)$
     \item $e^2 A_\mu^2 |\phi|^2$项顶点：$\scalebox{0.4}{\begin{tikzpicture}[baseline=(current bounding box.center),every edge/.style={draw, thick}]
   \begin{feynman}
     \vertex (b);
