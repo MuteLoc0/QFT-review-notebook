@@ -76,18 +76,17 @@ $e^-$反子的粒子流方向和动量方向一致，而带有$e^+$电荷的正�
     \item 从费曼图到$\scriptstyle\ramuno\mathcal{M}$，要反着粒子流，从出射写到顶点、回到入射，即总有$\scriptstyle\bar{u}^s\gamma^\mu u_s$类似的形式。其中粒子前后可以不同，按照粒子标记自旋。最后，计算$\scriptstyle\overline{|{\mathcal M}|^2} = \frac{1}{\text{入射粒子自旋可能数}} \sum_{\text{所有自旋}}|\mathcal{M}|^2$，如$\scriptstyle\overline{|\mathcal M|^2} = \frac{1}{4}\sum|\iam|^2 &= \frac{1}{2}\sum_s \frac{1}{2}\sum_{s'}\sum_t\sum_{t'}|\iam(s,s'\to t,t')|^2$
     \item 符号：以某一费曼图作为$+$，其他费曼图检查是否有费米子交换，如$s,t$通道或$t,u$通道之间差个负号。如果存在费米子圈，则额外多一个负号。
 \end{itemize}
-检验用Ward等式：$\scriptstylek_\mu \mathcal{M}^\mu = 0$把矩阵元里的光子极化向量 $\scriptstyle\epsilon_\mu(k)$ 替换为光子的动量 $\scriptstyle k_\mu$，结果必须为 0。
+检验用Ward等式：$\scriptstyle k_\mu \mathcal{M}^\mu = 0$把矩阵元里的光子极化向量 $\scriptstyle\epsilon_\mu(k)$ 替换为光子的动量 $\scriptstyle k_\mu$，结果必须为 0。
 
 费曼图计算常用：
 \begin{align*}
-    \scriptstyle \sum_{s, s'} \left| \bar{u}(p') \gamma^0 u(p) \right|^2 & \scriptstyle= \text{Tr}\left[ (\slashed{p}' + m) \gamma^0 (\slashed{p} + m) \gamma^0 \right].\\
-    \scriptstyle \text{Tr}\left[ (\slashed{p}' + m) \gamma^0 (\slashed{p} + m) \gamma^0 \right] &\scriptstyle = \text{Tr}\left[ \slashed{p}' \gamma^0 \slashed{p} \gamma^0 \right] + m^2 \text{Tr}[\gamma^0 \gamma^0] = \text{Tr}\left[ \gamma^\mu \gamma^0 \gamma^\nu \gamma^0 \right] p'_\mu p_\nu + 4m^2,
+    \scriptstyle \sum_{s, s'} \left| \bar{u}(p') \gamma^0 u(p) \right|^2 & \scriptstyle= \text{Tr}\left[ (\slashed{p}' + m) \gamma^0 (\slashed{p} + m) \gamma^0 \right]= \text{Tr}\left[ \slashed{p}' \gamma^0 \slashed{p} \gamma^0 \right] + m^2 \text{Tr}[\gamma^0 \gamma^0] = \text{Tr}\left[ \gamma^\mu \gamma^0 \gamma^\nu \gamma^0 \right] p'_\mu p_\nu + 4m^2,
 \end{align*}
 
 Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
 \begin{align*}
     % s-channel diagram (Annihilation)
-    \scalebox{0.5}{\feynmandiagram [vertical=p2 to p1, baseline=(current bounding box.center),every edge/.style={draw, thick}] {
+    \scalebox{0.3}{\feynmandiagram [vertical=p2 to p1, baseline=(current bounding box.center),every edge/.style={draw,very thick}] {
         e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1, 
         e2 [particle = $e^+$] -- [anti fermion, momentum' = $k$] p1,
         p1 -- [photon, edge label = $q$] p2,
@@ -98,7 +97,7 @@ Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
     \left[ \bar{v}^t(k) \gamma^\mu u^s(p) \right] 
     \left[ \bar{u}^{s'}(p') \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2, \\
     % t-channel diagram (Scattering)
-    \scalebox{0.5}{\feynmandiagram [horizontal=p1 to p2, baseline=(current bounding box.center),every edge/.style={draw, thick}] {
+    \scalebox{0.3}{\feynmandiagram [horizontal=p1 to p2, baseline=(current bounding box.center),every edge/.style={draw,very thick}] {
         e1 [particle = $e^-$] -- [fermion, edge label = $p$] p1
            -- [fermion, edge label = $p'$] e3 [particle = $e^-$],
         p1 -- [photon, edge label' = $q$] p2,
