@@ -1,14 +1,14 @@
 \nsection{Spinors}
 $\gamma$矩阵和洛仑兹代数
-\begin{equation}
+\begin{equation*}
     \scriptstyle\left[S^{\mu\nu},S^{\rho\sigma}\right] = \ramuno \big(
             g^{\nu\rho}S^{\mu\sigma}-g^{\mu\rho}S^{\nu\sigma}-g^{\nu\sigma}S^{\mu\rho}+g^{\mu\sigma}S^{\nu\rho}
         \big).
-\end{equation}
+\end{equation*}
 无限小变化${T^\mu}_\nu = {\delta^\mu}_\nu + {\theta^\mu}_\nu$下，矢量表象的洛仑兹变换满足
-    \begin{equation}
+    \begin{equation*}
         \scriptstyle {(\varLambda_v)^\mu}_\nu = {\delta^\mu}_\nu + \ramuno \theta_{\rho\sigma}{(M^{\rho\sigma})^\mu}_\nu,
-    \end{equation}
+    \end{equation*}
     其中 ${(M^{\rho\sigma})^\mu}_\nu$ 也有洛仑兹代数$\scriptstyle [M^{ab},M^{cd}] = \ramuno\big(-g^{ac} M^{bd} + (a\leftrightarrow b)\big)-(c\leftrightarrow d)$，一种显示表示是$\scriptstyle{(M^{\rho\sigma})^\mu}_\nu = \ramuno(g^{\rho\mu}{\delta^\sigma}_\nu - {\delta^\rho}_\nu g^{\sigma\mu})$。
 
 $\gamma$矩阵性质：
@@ -17,8 +17,8 @@ $\gamma$矩阵性质：
         \scriptstyle\gamma^\mu &\scriptstyle= \begin{pmatrix}
             0 &\sigma^\mu \\
             \bar{\sigma}^\mu &0
-        \end{pmatrix},\quad \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
-        \scriptstyle(\gamma^\mu)^\dagger &\scriptstyle= \gamma^0 \gamma^\mu \gamma^0,\\
+        \end{pmatrix},\\
+        \scriptstyle(\gamma^\mu)^\dagger &\scriptstyle= \gamma^0 \gamma^\mu \gamma^0,\quad \text{where }\sigma^\mu \equiv (1, \bm{\sigma}),\qquad \bar{\sigma}^\mu \equiv (1,-\bm{\sigma}),\\
         \scriptstyle\gamma_\mu \gamma^\mu &\scriptstyle= 4,\quad\text{Tr}[\gamma^{\mu_1} \dots \gamma^{\mu_n}] = \text{Tr}[\gamma^{\mu_n} \dots \gamma^{\mu_1}]\\
         \scriptstyle\text{Tr}[\gamma^\alpha \gamma^\mu \gamma^\beta \gamma^\nu] &\scriptstyle= 4 (g^{\alpha\mu}g^{\beta\nu} + g^{\alpha\nu}g^{\mu\beta} - g^{\alpha\beta}g^{\mu\nu}),\\
         \scriptstyle\gamma_\mu \slashed{a}\slashed{b} \gamma^\mu &\scriptstyle= 4(a\cdot b)I_4,\quad \text{Tr}[\text{odd number of } \gamma] = 0\\
@@ -26,7 +26,7 @@ $\gamma$矩阵性质：
     \end{align*}
 另外$\scriptstyle (p\cdot{\sigma})(p\cdot\bar{\sigma})=m^2 \mathbb{1}_2.$
 
-\concept{Dirac equation}{在Weyl spinors表象下}
+\concept{Dirac equation*}{在Weyl spinors表象下}
 \begin{equation*}
         \scriptstyle(\ramuno \gamma^\mu \partial_\mu - m)\psi = \begin{pmatrix}
             -m & \ramuno \sigma\cdot \partial\\
@@ -37,7 +37,7 @@ $\gamma$矩阵性质：
         \end{pmatrix} = 0.
 \end{equation*}
 据$\scriptstyle\varLambda_s^{-1}\gamma^\mu \varLambda_s = {(\varLambda_v)^\mu}_\nu \gamma^\nu$在洛仑兹变换下不变。其平面波解$\phi = u_s(p)\eu^{-\ramuno p x}$和$v_s(p)\eu^{\ramuno p x}$，$s=1,2$描述偏振方向，其中
-\begin{equation}
+\begin{equation*}
     \scriptstyle u_s = \begin{pmatrix}
         \scriptstyle \sqrt{p\cdot\sigma}\zeta_s \\
         \scriptstyle \sqrt{p\cdot\bar{\sigma}}\zeta_s
@@ -45,13 +45,14 @@ $\gamma$矩阵性质：
         \scriptstyle \sqrt{p\cdot \sigma}\eta_s\\
         \scriptstyle -\sqrt{p\cdot \bar{\sigma}}\eta_s
     \end{pmatrix}
-\end{equation}
+\end{equation*}
 有定义$\bar{\psi} \equiv \psi^\dagger \gamma^0$。自旋求和完整关系$\scriptstyle\sum_{s=1,2}  u_s \bar{u}_s = \gamma^\mu p_\mu + m$与$\scriptstyle\sum_{s} v^s(p) \bar{v}^s(p) = \not{p} - m$，正交关系$\scriptstyle\bar{u}_r u_s = 2m \delta_{rs}$
 
-\begin{align}
+\begin{align*}
     \scriptstyle\psi(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^s u^s(p) e^{-ip\cdot x} + b_p^{s\dagger} v^s(p) e^{ip\cdot x} \right)\\
-    \scriptstyle\bar{\psi}(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^{s\dagger} \bar{u}^s(p) e^{ip\cdot x} + b_p^s \bar{v}^s(p) e^{-ip\cdot x} \right)
-\end{align}
+    \scriptstyle\bar{\psi}(x) &\scriptstyle= \int \frac{d^3p}{(2\pi)^3 \sqrt{2E_p}} \sum_{s=1,2} \left( a_p^{s\dagger} \bar{u}^s(p) e^{ip\cdot x} + b_p^s \bar{v}^s(p) e^{-ip\cdot x} \right)\\
+    \scriptstyle S_F(x-y) = \int \frac{d^4p}{(2\pi)^4} \frac{i(\not{p} + m)}{p^2 - m^2 + i\epsilon} e^{-ip\cdot (x-y)}
+\end{align*}
 
 \nsection{Feynman Rule of spinor QED}
 可能用到的公式\concept{Dyson series}{
@@ -78,7 +79,7 @@ $e^-$反子的粒子流方向和动量方向一致，而带有$e^+$电荷的正�
     \end{align*}
     \item 顶点因子：无论粒子正负如何，总是粒子流传入传出$\scalebox{0.4}{\feynmandiagram [horizontal=a to b, node distance=1cm,baseline=a to b,every edge/.style={draw, thick}] {a --[ fermion] b,b --[fermion] c, b --[photon] d};}\scriptstyle\quad= -\ramuno e \gamma_\mu$
     \item 除以对称因子：一般不用考虑，目前能够讨论的基本都是$1$，有loop的除外。
-    \item 从费曼图到$\scriptstyle\ramuno\mathcal{M}$，要反着粒子流，从出射写到顶点、回到入射，即总有$\scriptstyle\bar{u}^s\gamma^\mu u_s$类似的形式。其中粒子前后可以不同，按照粒子标记自旋。最后，计算$\scriptstyle\overline{|{\mathcal M}|^2} = \frac{1}{\text{入射粒子自旋可能数}} \sum_{\text{所有自旋}}|\mathcal{M}|^2$，如$\scriptstyle\overline{|\mathcal M|^2} = \frac{1}{4}\sum|\iam|^2 &= \frac{1}{2}\sum_s \frac{1}{2}\sum_{s'}\sum_t\sum_{t'}|\iam(s,s'\to t,t')|^2$
+    \item 从费曼图到$\scriptstyle\ramuno\mathcal{M}$，要反着粒子流，从出射写到顶点、回到入射，即总有$\scriptstyle\bar{u}^s\gamma^\mu u_s$类似的形式。其中粒子前后可以不同，按照粒子标记自旋。最后，计算$\scriptstyle\overline{|{\mathcal M}|^2} = \frac{1}{\text{入射粒子自旋可能数}} \sum_{\text{所有自旋}}|\mathcal{M}|^2$，如$\scriptstyle\overline{|\mathcal M|^2} = \frac{1}{4}\sum|\iam|^2 = \frac{1}{2}\sum_s \frac{1}{2}\sum_{s'}\sum_t\sum_{t'}|\iam(s,s'\to t,t')|^2$
     \item 符号：以某一费曼图作为$+$，其他费曼图检查是否有费米子交换，如$s,t$通道或$t,u$通道之间差个负号。如果存在费米子圈，则额外多一个负号。
 \end{itemize}
 检验用Ward等式：$\scriptstyle k_\mu \mathcal{M}^\mu = 0$把矩阵元里的光子极化向量 $\scriptstyle\epsilon_\mu(k)$ 替换为光子的动量 $\scriptstyle k_\mu$，结果必须为 0。
@@ -113,6 +114,16 @@ Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
     \left[ \bar{u}^{s'}(p') \gamma^\mu u^s(p) \right] 
     \left[ \bar{v}^t (k) \gamma^\nu v^{t'}(k') \right] (-\ramuno e)^2.
 \end{align*}
+\vspace{-1.6em}
+\begin{equation*}
+    \scriptstyle \text{算例：}\frac{1}{4}\cancel{\sum_{\text{spins}}}\Bigg\{
+        \frac{e^4}{s^2}\cancelto{\text{Tr}[(\slashed{k}-m_e)\gamma^\mu(\slashed{p}+m_e)\gamma^\nu]}{\left[\bar v^t (k) \gamma^\mu u^s(p) \bar u^s(p) \gamma^\nu v^t(k)\right]}\cancelto{\text{Tr}[(\slashed{p'}+m_e)\gamma_\mu (\slashed{k'}-m_e)\gamma_\nu]}{\left[ \bar u^{s'}(p')\gamma_\mu v^{t'}(k') \bar v^{t'}(k') \gamma_\nu u^{s'}(p')\right]} + \cdots
+    \Bigg\}
+\end{equation*}
+本身是个标量，前面加上$\text{Tr}$求迹等价，然后改换位置套公式，每一个小区都要循环。在碰撞能量远大于电子能量时，
+\begin{equation*}
+    \scriptstyle s = (p+k)^2 = m_p + m_k + 2 p\cdot k \approx 2 p\cdot k = 2 p' \cdot k'
+\end{equation*}
 
 \nsection{重整化}
 \concept{ $\phi^4$ 理论}{} 首先树图级，$\ramuno \mathcal{M}_1 = -\ramuno \lambda$\\
@@ -151,9 +162,7 @@ $
 \begin{equation*}\scriptstyle
     \lambda_R = - \mathcal{M}(s_0) = \lambda + \frac{\lambda^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right) \quad (\text{有限值})
 \end{equation*}
-则$
-    \lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)
-$,
+则$\lambda \approx \lambda_R - \frac{\lambda_R^2}{32\pi^2} \ln \left( \frac{s_0}{\Lambda^2} \right)$,
 代回总振幅表达式，发散项 $\ln \Lambda^2$ 被抵消：
 \begin{equation*}\scriptstyle
     \mathcal{M}(s) = 
@@ -190,10 +199,10 @@ $k^\mu \to k^\mu + p^\mu(1-x)$，定义:$\Delta = m^2 - p^2 x(1-x)$。
   \mathcal{M}(Q)  = \tilde{g}_R^2 + \frac{1}{32\pi^2} \tilde{g}_R^4 \ln \frac{Q_0^2}{Q^2} + \mathcal{O}(\tilde{g}_R^6)
 \end{equation*}
 \concept{维数正规化}{
-    \begin{align}
+    \begin{align*}
         \scriptstyle\int \frac{\dif^d l}{(2\pi)^d} \frac{l^2}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{d}{2} \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2} - 1} \Gamma\left(\frac{2-d}{2}\right),\\
         \scriptstyle\int\frac{\dif^d l}{(2\pi)^d} \frac{1}{(l^2 - \Delta + \ramuno \epsilon)^2} &=\scriptstyle \frac{\ramuno}{(4\pi)^{d/2}}\Delta^{\frac{d}{2}-2}\Gamma\left(\frac{4-d}{2}\right).
-    \end{align}}
+    \end{align*}}
 
 TODO：1. 符号 2. 旋量传播子
 3. 重整化第三部分 4. 光子场
