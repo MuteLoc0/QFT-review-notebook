@@ -46,7 +46,7 @@ $\gamma$矩阵性质：
         \scriptstyle -\sqrt{p\cdot \bar{\sigma}}\eta_s
     \end{pmatrix}
 \end{equation}
-同时$\bar{\psi} \equiv \psi^\dagger \gamma^0$
+有定义$\bar{\psi} \equiv \psi^\dagger \gamma^0$。自旋求和完整关系$\scriptstyle\sum_{s=1,2} u_s \bar{u}_s\gamma^\mu p_\mu + m$，正交关系$\scriptstyle\bar{u}_r u_s = 2m \delta_{rs}$
 
 \nsection{Feynman Rule of spinor QED}
 可能用到的公式\concept{Dyson series}{
@@ -56,20 +56,34 @@ $\gamma$矩阵性质：
     \end{equation*}
 }
 $e^-$反子的粒子流方向和动量方向一致，而带有$e^+$电荷的正子粒子流方向和动量方向相反。
+
+标量粒子和玻色子$\scriptstyle T\{\phi_1 \phi_2\} = \theta(x_1-x_2) \phi_1 \phi_2 + \theta(x_2-x_1) \phi_2 \phi_1$，而费米子有$\scriptstyle T\{\psi(x_1) \bar{\psi}(x_2)\} = \theta(t_1 - t_2) \psi(x_1) \bar{\psi}(x_2) - \theta(t_2 - t_1) \bar{\psi}(x_2) \psi(x_1)$
 \begin{itemize}[nosep]
     \item 光子传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon, edge label = $p$] b};}= \textstyle \frac{-\ramuno}{p^2 +\ramuno\epsilon}\left[g_{\mu\nu} - (1-\xi)\frac{p_\mu p_\nu}{p^2}\right]$，一般在费曼规范下$\xi=1$为$\scriptstyle \frac{-\ramuno g_{\mu\nu}}{p^2+\ramuno\epsilon}$
     \item 旋量传播子：$\scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[fermion, edge label = $p$] b};}= \frac{\ramuno(\slashed{p}+m)}{p^2 - m^2 +\ramuno\epsilon}$
-    \item 外线光子：\begin{align}
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon] b[dot]};} &\scriptstyle= \epsilon_\mu (p)\quad\text{传入}\\
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[photon] b};}&\scriptstyle=\epsilon^*_\mu (p)\quad \text{传出}
-    \end{align}
-    \item 外线旋量：\begin{align}
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[fermion] b[dot]};} &\scriptstyle= u^s (p)\quad\text{传入}\\
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[fermion] b};}&\scriptstyle=\bar u^s (p)\quad \text{传出}\\
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[anti fermion] b[dot]};} &\scriptstyle= \bar v^s(p)\quad\text{动量传入}\\
-        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[anti fermion] b};}&\scriptstyle=v^s (p)\quad \text{动量传出}
-    \end{align}
+    \item 外线光子：\begin{align*}
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[photon] b[dot]};} &\quad\scriptstyle= \epsilon_\mu (p)\quad\text{传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[photon] b};}&\quad\scriptstyle=\epsilon^*_\mu (p)\quad \text{传出}
+    \end{align*}
+    \item 外线旋量：\begin{align*}
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[fermion] b[dot]};} &\quad\scriptstyle= u^s (p)\quad\text{传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[fermion] b};}&\quad\scriptstyle=\bar u^s (p)\quad \text{传出}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a --[anti fermion] b[dot]};} &\quad\scriptstyle= \bar v^s(p)\quad\text{正子，动量传入}\\
+        \scalebox{0.7}{\feynmandiagram [horizontal=a to b, node distance=1cm,] {a[dot] --[anti fermion] b};}&\quad\scriptstyle=v^s (p)\quad \text{正子，动量传出}
+    \end{align*}
+    \item 顶点因子：无论粒子正负如何，总是粒子流传入传出$\scalebox{0.4}{\feynmandiagram [horizontal=a to b, node distance=1cm,baseline=a to b,every edge/.style={draw, thick}] {a --[ fermion] b,b --[fermion] c, b --[photon] d};}\scriptstyle\quad= -\ramuno e \gamma_\mu$
+    \item 除以对称因子：一般不用考虑，目前能够讨论的基本都是$1$，有loop的除外。
+    \item 从费曼图到$\scriptstyle\ramuno\mathcal{M}$，要反着粒子流，从出射写到顶点、回到入射，即总有$\scriptstyle\bar{u}^s\gamma^\mu u_s$类似的形式。其中粒子前后可以不同，按照粒子标记自旋。最后，计算$\scriptstyle\overline{|{\mathcal M}|^2} = \frac{1}{\text{入射粒子自旋可能数}} \sum_{\text{所有自旋}}|\mathcal{M}|^2$，如$\scriptstyle\overline{|\mathcal M|^2} = \frac{1}{4}\sum|\iam|^2 &= \frac{1}{2}\sum_s \frac{1}{2}\sum_{s'}\sum_t\sum_{t'}|\iam(s,s'\to t,t')|^2$
+    \item 符号：以某一费曼图作为$+$，其他费曼图检查是否有费米子交换，如$s,t$通道或$t,u$通道之间差个负号。如果存在费米子圈，则额外多一个负号。
 \end{itemize}
+检验用Ward等式：$\scriptstylek_\mu \mathcal{M}^\mu = 0$把矩阵元里的光子极化向量 $\scriptstyle\epsilon_\mu(k)$ 替换为光子的动量 $\scriptstyle k_\mu$，结果必须为 0。
+
+费曼图计算常用：
+\begin{align*}
+    \scriptstyle \sum_{s, s'} \left| \bar{u}(p') \gamma^0 u(p) \right|^2 & \scriptstyle= \text{Tr}\left[ (\slashed{p}' + m) \gamma^0 (\slashed{p} + m) \gamma^0 \right].\\
+    \scriptstyle \text{Tr}\left[ (\slashed{p}' + m) \gamma^0 (\slashed{p} + m) \gamma^0 \right] &\scriptstyle = \text{Tr}\left[ \slashed{p}' \gamma^0 \slashed{p} \gamma^0 \right] + m^2 \text{Tr}[\gamma^0 \gamma^0] = \text{Tr}\left[ \gamma^\mu \gamma^0 \gamma^\nu \gamma^0 \right] p'_\mu p_\nu + 4m^2,
+\end{align*}
+
 Example: $e^- e^+ \to e^+ e^-$ Bhabha Scattering
 \begin{align*}
     % s-channel diagram (Annihilation)
