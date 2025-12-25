@@ -166,19 +166,19 @@ LSZ将S联系到关联函数
 \concept{Ward Identity}{}
 考虑路径积分下的诺特定理， 做变换
 \begin{equation*}\scriptstyle
-I_{12} = \braket{\psi(x_1)\overline{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D}\overline{\psi} \, \eu^{\ramuno \int \dif^4 x \left[ \overline{\psi}(\ramuno \not{\partial} - m)\psi + \dots \right]} \psi(x_1) \overline{\psi}(x_2)
+I_{12} = \braket{\psi(x_1)\bar{\psi}(x_2)}= \int \mathcal{D}\psi \mathcal{D}\bar{\psi} \, \eu^{\ramuno \int \dif^4 x \left[ \bar{\psi}(\ramuno \not{\partial} - m)\psi + \dots \right]} \psi(x_1) \bar{\psi}(x_2)
 \end{equation*}
 \begin{equation*}\scriptstyle
-    \psi(x) \to \eu^{-\ramuno \alpha(x)}\psi(x), \quad \overline{\psi}(x) \to \eu^{\ramuno \alpha(x)}\overline{\psi}(x)
+    \psi(x) \to \eu^{-\ramuno \alpha(x)}\psi(x), \quad \bar{\psi}(x) \to \eu^{\ramuno \alpha(x)}\bar{\psi}(x)
 \end{equation*}
-路径积分的值 $Z$ 不变，拉氏量改变，2个$\psi$改变:\\
+路径积分的值 $Z$ 不变，拉氏量改变，2个$\psi$改变:
 \begin{align*}
-    \scriptstyle  \ramuno \overline{\psi}(x) \not{\partial} \psi(x) \to \ramuno \overline{\psi}(x) \not{\partial} \psi(x) + \overline{\psi}(x) \gamma^\mu \psi(x) \partial_\mu \alpha(x) \\
-    \scriptstyle \psi(x_1) \overline{\psi}(x_2) \to \eu^{-\ramuno \alpha(x_1)} \eu^{\ramuno \alpha(x_2)} \psi(x_1) \overline{\psi}(x_2)
+    \scriptstyle  \ramuno \bar{\psi}(x) \not{\partial} \psi(x) \to \ramuno \bar{\psi}(x) \not{\partial} \psi(x) + \bar{\psi}(x) \gamma^\mu \psi(x) \partial_\mu \alpha(x) \\
+    \scriptstyle \psi(x_1) \bar{\psi}(x_2) \to \eu^{-\ramuno \alpha(x_1)} \eu^{\ramuno \alpha(x_2)} \psi(x_1) \bar{\psi}(x_2)
 \end{align*}    
 由于 $\alpha(x)$ 的任意性，被积函数必须为零，从而得到 
 \begin{equation*}\scriptstyle
-    \partial_\mu \braket{T j^\mu(x) \psi(x_1) \overline{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{T \psi(x_1)\overline{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{T \psi(x_1)\overline{\psi}(x_2)}
+    \partial_\mu \braket{ j^\mu(x) \psi(x_1) \bar{\psi}(x_2)} = -\delta^{(4)}(x-x_1)\braket{\psi(x_1)\bar{\psi}(x_2)} + \delta^{(4)}(x-x_2)\braket{ \psi(x_1)\bar{\psi}(x_2)}
 \end{equation*}
 这表明量子守恒流的散度仅在接触项处非零。
 \nsection{光子场量子化}
@@ -192,12 +192,12 @@ $\pi^0 = \frac{\partial \mathcal{L}}{\partial \dot{A}_0} = 0 $
   ,$  \pi^i = \frac{\partial \mathcal{L}}{\partial \dot{A}_i} = -F^{0i} = E^i $
 
 \concept{Coulomb Gauge}{$\nabla \cdot \bm{A} = 0$,即$A_0 = 0$，拉氏方程:$\square \bm{A} = 0 $}
- $\bm{A}(x) &= \int \frac{\dif^3 p}{(2\pi)^3 }  \bm\epsilon(\bm{p})  \eu^{\ramuno p \cdot x}$
+ $\bm{A}(x) = \int \frac{\dif^3 p}{(2\pi)^3 }  \bm\epsilon(\bm{p})  \eu^{\ramuno p \cdot x}$
 \begin{align*}
     \scriptstyle \bm{A}(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3 \sqrt{2|\bm{p}|}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} + a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right] \\
     \scriptstyle \bm{E}(x) &\scriptstyle = \int \frac{\dif^3 p}{(2\pi)^3} (-\ramuno)\sqrt{\frac{|\bm{p}|}{2}} \sum_{r=1}^2 \bm{\epsilon}_r(\bm{p}) \left[ a_{\bm{p}}^r \eu^{-\ramuno p \cdot x} - a_{\bm{p}}^{r\dagger} \eu^{\ramuno p \cdot x} \right]
 \end{align*}
-正则对易关系：$\scriptstyle [a_{p}^{r},a_{q}^{r\dagger}]=(2\pi)^3 \delta^{rs} \delta^{3}(p-q)$。$\scriptstyle \epsilon_r(\bm{p}) \cdot \epsilon_s(\bm{p})=\delta_{rs}$，$\scriptstyle \sum_{r=1}^2 \epsilon_r^i(\bm{p}) \epsilon_r^j(\bm{p}) = \delta^{ij} - \frac{p^i p^j}{|\bm{p}|^2}$
+正则对易关系：$\scriptstyle [a_{p}^{r},a_{q}^{s\dagger}]=(2\pi)^3 \delta^{rs} \delta^{3}(p-q)$。$\scriptstyle \epsilon_r(\bm{p}) \cdot \epsilon_s(\bm{p})=\delta_{rs}$，$\scriptstyle \sum_{r=1}^2 \epsilon_r^i(\bm{p}) \epsilon_r^j(\bm{p}) = \delta^{ij} - \frac{p^i p^j}{|\bm{p}|^2}$
 最终得到：
 \begin{equation*}
     \scriptstyle [A_i(\bm{x}), E_j(\bm{y})] = \ramuno \left( \delta_{ij} - \frac{\partial_i \partial_j}{\nabla^2} \right) \delta^{(3)}(\bm{x}-\bm{y}) = \ramuno \int \frac{\dif^3 p}{(2\pi)^3} \left( \delta_{ij} - \frac{p_i p_j}{|\bm{p}|^2} \right) \eu^{\ramuno \bm{p} \cdot (\bm{x}-\bm{y})}
